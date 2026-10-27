@@ -1,573 +1,841 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es-MX">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nombre del Negocio | Mueblería Premium – Producto y Servicio</title>
-    <meta name="description" content="Descripción de ejemplo para plantilla. Especialistas en productos de alta calidad. Más de 200 modelos disponibles.">
-    <meta name="keywords" content="plantilla, muebles, productos, ejemplo">
-    <meta name="author" content="Mi Negocio">
-    <meta property="og:title" content="Nombre del Negocio | Mueblería Premium">
-    <meta property="og:description" content="Transforma tu hogar con los mejores productos.">
-    <meta property="og:type" content="website">
-    <meta name="theme-color" content="#97bea9">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="img/logo.png" type="image/png">
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<!-- LOADER -->
-<div id="loader" role="status" aria-label="Cargando">
-    <div class="loader-inner">
-        <img src="img/logo.png" alt="Mi Negocio" class="loader-logo">
-        <div class="loader-spinner"></div>
-        <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    <!-- SEO base -->
+    <title>Karmax | Renta de toro mecánico e inflables en Puebla</title>
+    <meta name="description" content="Renta de toro mecánico, inflables, cañón de espuma, carreta de princesas y más para fiestas y eventos en Puebla. Aparta tu fecha por WhatsApp.">
+    <meta name="keywords" content="renta de toro mecánico Puebla, renta de inflables Puebla, cañón de espuma Puebla, brincolines, carreta de princesas, demoledor, miniferia, renta de scooters, fiestas infantiles Puebla, atracciones para eventos">
+    <meta name="author" content="Atracciones Karmax">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#0d0e12">
+    <meta name="color-scheme" content="light">
+    <!-- Al publicar: agregar <link rel="canonical" href="https://TU-DOMINIO/"> y convertir las rutas de og:image a URL absolutas -->
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="Atracciones Karmax">
+    <meta property="og:title" content="Atracciones Karmax | La fiesta más divertida de Puebla">
+    <meta property="og:description" content="Toro mecánico, inflables, cañón de espuma, carreta de princesas, tren infantil y más. Aparta tu fecha hoy.">
+    <meta property="og:image" content="img/web/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Logotipo de Atracciones Karmax junto a un toro mecánico, un inflable y una carreta de princesas">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Iconos -->
+    <link rel="icon" href="img/web/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="img/web/favicon-48.png" type="image/png" sizes="48x48">
+    <link rel="apple-touch-icon" href="img/web/apple-touch-icon.png">
+
+    <!-- Rendimiento: tipografías propias e imagen principal del hero -->
+    <link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="img/web/inflable-avengers.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Habilita estilos de animación solo si hay JavaScript (el contenido nunca queda oculto sin JS) -->
+    <script>document.documentElement.className += ' js is-loading';</script>
+
+    <!-- Datos estructurados: negocio local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EntertainmentBusiness",
+      "name": "Atracciones Karmax",
+      "alternateName": "Karmax",
+      "description": "Renta de toro mecánico, demoledor, inflables, cañón de espuma, carreta de princesas, tren infantil, miniferia, alberca con lanchas y scooters eléctricos para fiestas y eventos en Puebla.",
+      "image": "img/web/og-image.jpg",
+      "logo": "img/web/icon-512.png",
+      "telephone": ["+52 222 131 4976", "+52 222 684 9456"],
+      "areaServed": { "@type": "City", "name": "Puebla" },
+      "sameAs": ["https://www.facebook.com/share/1C2D5RtzEf/"],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Atracciones en renta",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de toro mecánico" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de demoledor" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de inflables y brincolines" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de cañón de espuma" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de carreta de princesas" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tren infantil para eventos" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de miniferia" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de alberca con lanchas" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Renta de scooters eléctricos" } }
+        ]
+      }
+    }
+    </script>
+    <!-- Datos estructurados: preguntas frecuentes (coinciden con la sección visible) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "¿En qué zonas dan servicio?", "acceptedAnswer": { "@type": "Answer", "text": "Atendemos la Ciudad de Puebla y alrededores. Escríbenos la ubicación de tu evento y confirmamos la cobertura." } },
+        { "@type": "Question", "name": "¿Cómo aparto mi fecha?", "acceptedAnswer": { "@type": "Answer", "text": "Mándanos un mensaje por WhatsApp con la fecha, el lugar y las atracciones que te interesan. Te confirmamos disponibilidad y cotización." } },
+        { "@type": "Question", "name": "¿Qué incluye el servicio?", "acceptedAnswer": { "@type": "Answer", "text": "Depende de la atracción. El cañón de espuma incluye operador, instalación y desmontaje. Al cotizar te detallamos qué incluye cada opción." } },
+        { "@type": "Question", "name": "¿Puedo combinar varias atracciones?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Te ayudamos a armar el combo ideal según el espacio, la edad de los invitados y el tipo de evento." } },
+        { "@type": "Question", "name": "¿La espuma es segura para los niños?", "acceptedAnswer": { "@type": "Answer", "text": "Usamos espuma hipoalergénica, segura para niños y adultos." } },
+        { "@type": "Question", "name": "¿Qué espacio necesito?", "acceptedAnswer": { "@type": "Answer", "text": "Cada atracción pide un espacio distinto. Cuéntanos si será en patio, salón, jardín o cancha y te recomendamos qué instalar." } }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<!-- Barra de progreso de scroll (colores del logotipo) -->
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<!-- ============ PRELOADER ============ -->
+<div class="loader" id="loader" role="status" aria-live="off" aria-label="Cargando Atracciones Karmax">
+    <div class="loader__panels" aria-hidden="true">
+        <i style="--c:var(--red)"></i><i style="--c:var(--green)"></i><i style="--c:var(--blue)"></i><i style="--c:var(--yellow)"></i><i style="--c:var(--cyan)"></i><i style="--c:var(--tan)"></i>
+    </div>
+    <div class="loader__core">
+        <div class="loader__ring">
+            <span class="loader__spin" aria-hidden="true"></span>
+            <img class="loader__emblem" src="img/web/logo-emblem.png" width="900" height="835" alt="">
+        </div>
+        <p class="loader__pct"><span id="loaderPct">0</span><small>%</small></p>
+        <p class="loader__msg" id="loaderMsg">Inflando brincolines</p>
+        <div class="loader__bar" aria-hidden="true">
+            <i style="--c:var(--red)"></i><i style="--c:var(--green)"></i><i style="--c:var(--blue)"></i><i style="--c:var(--yellow)"></i><i style="--c:var(--cyan)"></i><i style="--c:var(--tan)"></i>
+        </div>
     </div>
 </div>
 
-<!-- NAVBAR -->
-<header id="navbar">
-    <div class="nav-wrap">
-        <a href="#hero" class="nav-brand" aria-label="Inicio">
-            <img src="img/logo.png" alt="Mi Negocio" class="nav-logo-img">
-            <span class="nav-logo-text">MI <em>NE</em>GOCIO</span>
+<!-- ============ NAVEGACIÓN ============ -->
+<header class="nav" id="nav">
+    <div class="nav__pill">
+        <a class="brand" href="#inicio" aria-label="Atracciones Karmax, ir al inicio">
+            <img class="brand__emblem" src="img/web/logo-emblem.png" width="900" height="835" alt="">
+            <img class="brand__word" src="img/web/logo-wordmark.png" width="1200" height="213" alt="Karmax">
         </a>
-        <nav class="nav-links" aria-label="Principal">
-            <a href="#colecciones">Catálogo</a>
-            <a href="#especialidades">Especialidades</a>
-            <a href="#proceso">Proceso</a>
-            <a href="#testimonios">Reseñas</a>
+        <nav class="nav__links" aria-label="Principal">
+            <a href="#atracciones">Atracciones</a>
+            <a href="#toros">Toros</a>
+            <a href="#inflables">Inflables</a>
+            <a href="#espuma">Espuma</a>
+            <a href="#como-funciona">Cómo funciona</a>
+            <a href="#contacto">Contacto</a>
         </nav>
-        <div class="nav-actions">
-            <a href="https://wa.me/520000000000" target="_blank" rel="noopener" class="btn-nav-wa">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                WhatsApp
-            </a>
-            <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" class="btn-nav-primary">Ver Catálogo</a>
-        </div>
-        <button class="nav-burger" id="nav-burger" aria-label="Menú" aria-expanded="false">
-            <span></span><span></span><span></span>
+        <a class="btn btn--red btn--sm nav__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero apartar mi fecha. ¿Tienen disponibilidad?">
+            <svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Quiero mi fecha</span>
+        </a>
+        <button class="nav__burger" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+            <svg class="ico ico--open"><use href="#i-list"/></svg>
+            <svg class="ico ico--close"><use href="#i-x"/></svg>
         </button>
     </div>
 </header>
 
-<!-- MOBILE MENU -->
-<div id="nav-mobile" role="dialog" aria-modal="true" aria-label="Menú de navegación">
-    <div class="nm-header">
-        <img src="img/logo.png" alt="Mi Negocio" class="nm-logo">
-        <button id="nav-close" aria-label="Cerrar menú">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-    </div>
-    <nav class="nm-nav">
-        <a href="#colecciones" class="nm-link">
-            <span class="nm-num">01</span>
-            <span class="nm-text">Catálogo</span>
-            <svg class="nm-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#especialidades" class="nm-link">
-            <span class="nm-num">02</span>
-            <span class="nm-text">Especialidades</span>
-            <svg class="nm-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#proceso" class="nm-link">
-            <span class="nm-num">03</span>
-            <span class="nm-text">Proceso</span>
-            <svg class="nm-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#testimonios" class="nm-link">
-            <span class="nm-num">04</span>
-            <span class="nm-text">Reseñas</span>
-            <svg class="nm-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#contacto" class="nm-link">
-            <span class="nm-num">05</span>
-            <span class="nm-text">Contacto</span>
-            <svg class="nm-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+<!-- Menú móvil -->
+<div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu__nav" aria-label="Menú móvil">
+        <a href="#atracciones"><span>Atracciones</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+        <a href="#toros"><span>Toros mecánicos</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+        <a href="#inflables"><span>Inflables</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+        <a href="#espuma"><span>Cañón de espuma</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+        <a href="#como-funciona"><span>Cómo funciona</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+        <a href="#contacto"><span>Contacto</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
     </nav>
-    <div class="nm-footer">
-        <a href="https://wa.me/520000000000" target="_blank" rel="noopener" class="nm-wa-btn">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-            Escríbenos por WhatsApp
+    <div class="menu__foot">
+        <a class="btn btn--red btn--lg" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero apartar mi fecha. ¿Tienen disponibilidad?">
+            <svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Quiero mi fecha</span>
         </a>
-        <div class="nm-social">
-            <a href="https://www.instagram.com/salas.online.tehuacan" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-            <a href="https://www.facebook.com/share/1BHe1Nc6b6/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-            <a href="https://www.tiktok.com/@salasonline3" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
-        </div>
+        <p>222 131 4976<br>Ciudad de Puebla y alrededores</p>
     </div>
 </div>
 
-<main>
+<!-- Riel de progreso estilo vía de tren (escritorio) -->
+<nav class="rail" id="rail" aria-label="Secciones de la página">
+    <ul>
+        <li><a href="#inicio" data-label="Inicio"><span class="sr">Inicio</span></a></li>
+        <li><a href="#atracciones" data-label="Atracciones"><span class="sr">Atracciones</span></a></li>
+        <li><a href="#toros" data-label="Toros"><span class="sr">Toros mecánicos</span></a></li>
+        <li><a href="#inflables" data-label="Inflables"><span class="sr">Inflables</span></a></li>
+        <li><a href="#espuma" data-label="Espuma"><span class="sr">Cañón de espuma</span></a></li>
+        <li><a href="#contacto" data-label="Contacto"><span class="sr">Contacto</span></a></li>
+    </ul>
+    <i class="rail__train" aria-hidden="true"></i>
+</nav>
 
-<!-- ═══════ HERO ═══════ -->
-<section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-wrap">
-        <div class="hero-content">
-            <div class="h-anim" style="--d:.3s">
-                <span class="hero-badge"><span class="badge-dot"></span>Los mejores productos en tu ciudad</span>
-            </div>
-            <h1 class="hero-title h-anim" style="--d:.55s">
-                Productos &amp; Servicios<br>que <span class="hero-red">Transforman</span><br>tu Espacio.
-            </h1>
-            <p class="hero-sub h-anim" style="--d:.8s">
-                Gran variedad de modelos disponibles. Modernos y contemporáneos. Encuentra el producto perfecto con la mejor calidad y precio.
-            </p>
-            <div class="hero-ctas h-anim" style="--d:1.0s">
-                <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" class="btn-primary">
-                    Explorar Catálogo
-                    <svg viewBox="0 0 20 20" fill="currentColor" width="16" height="16"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="hero__aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+    <canvas class="hero__gl" id="heroGL" aria-hidden="true"></canvas>
+
+    <div class="wrap hero__grid">
+        <div class="hero__copy">
+            <p class="eyebrow" data-intro style="--d:.05s"><span class="eyebrow__bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>Renta de atracciones en Puebla</p>
+            <h1 class="hero__title" id="hero-title" data-split data-intro-split>Todos a bordo de la fiesta más divertida.</h1>
+            <p class="hero__lead" data-intro style="--d:.55s">Renta de toros mecánicos, inflables, cañón de espuma y carreta de princesas para tus eventos en Puebla y alrededores.</p>
+            <div class="hero__cta" data-intro style="--d:.7s">
+                <a class="btn btn--red btn--lg btn--mag" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero apartar mi fecha. ¿Tienen disponibilidad?">
+                    <svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Quiero mi fecha</span>
                 </a>
-                <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" class="btn-secondary">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                    Ver Catálogo WA
-                </a>
+                <a class="btn btn--ghost btn--lg" href="#atracciones"><span>Ver atracciones</span><svg class="ico"><use href="#i-arrow-right"/></svg></a>
             </div>
-            <div class="hero-stats h-anim" style="--d:1.25s">
-                <div class="hs"><strong>5<span>+</span></strong><small>Años</small></div>
-                <div class="hs-sep"></div>
-                <div class="hs"><strong>1,000<span>+</span></strong><small>Clientes</small></div>
+        </div>
+
+        <div class="stage" id="stage" data-intro style="--d:.35s">
+            <div class="stage__halo" aria-hidden="true"></div>
+            <figure class="stage__card stage__card--a" data-depth="1">
+                <img src="img/web/inflable-avengers.webp" width="1600" height="1200" alt="Inflable temático de superhéroes con tobogán instalado en un jardín, renta de inflables en Puebla" fetchpriority="high" decoding="async">
+            </figure>
+            <figure class="stage__card stage__card--b" data-depth="1.8">
+                <img src="img/web/toro-coliseo.webp" width="1280" height="960" alt="Niños y adultos alrededor de un toro mecánico con ring inflable en una cancha techada" decoding="async">
+            </figure>
+            <figure class="stage__card stage__card--c" data-depth="0.7">
+                <img src="img/web/carreta-noche.webp" width="1600" height="1200" alt="Carreta de princesas iluminada con luces frente a un castillo de noche" decoding="async">
+            </figure>
+            <div class="seal" aria-hidden="true" data-depth="2.4">
+                <svg class="seal__text" viewBox="0 0 200 200">
+                    <defs><path id="sealPath" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+                    <text><textPath href="#sealPath" startOffset="0" textLength="470" lengthAdjust="spacing">Atracciones Karmax • Renta de diversión • Puebla •</textPath></text>
+                </svg>
+                <img class="seal__emblem" src="img/web/logo-emblem.png" width="900" height="835" alt="">
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════ MARQUEE ═══════ -->
-<div class="marquee-section" aria-hidden="true">
-    <div class="marquee-track">
-        <span>Gran Variedad</span><span class="mdot"></span>
-        <span>Envío sin costo</span><span class="mdot"></span>
-        <span>Sistema de apartado</span><span class="mdot"></span>
-        <span>Garantía Incluida</span><span class="mdot"></span>
-        <span>Ciudad, Estado</span><span class="mdot"></span>
-        <span>Asesoría Personalizada</span><span class="mdot"></span>
-        <span>Calidad garantizada</span><span class="mdot"></span>
-        <span>Gran Variedad</span><span class="mdot"></span>
-        <span>Envío sin costo</span><span class="mdot"></span>
-        <span>Sistema de apartado</span><span class="mdot"></span>
-        <span>Garantía Incluida</span><span class="mdot"></span>
-        <span>Ciudad, Estado</span><span class="mdot"></span>
-        <span>Asesoría Personalizada</span><span class="mdot"></span>
-        <span>Calidad garantizada</span><span class="mdot"></span>
+<!-- ============ MARQUEE (único de la página) ============ -->
+<div class="marquee-wrap">
+<section class="marquee" aria-label="Atracciones disponibles">
+    <div class="marquee__track" id="marqueeTrack">
+        <ul class="marquee__set">
+            <li>Toro mecánico</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+            <li>Demoledor</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+            <li>Inflables</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+            <li>Cañón de espuma</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+            <li>Carreta de princesas</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+            <li>Tren infantil</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+            <li>Miniferia</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+            <li>Alberca con lanchas</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+            <li>Scooters eléctricos</li><li class="mq-star" aria-hidden="true"><svg class="ico"><use href="#i-sparkle"/></svg></li>
+        </ul>
     </div>
+</section>
 </div>
 
-<!-- ═══════ ESPECIALIDADES ═══════ -->
-<section id="especialidades" class="s-dark">
-    <div class="s-wrap">
-        <div class="s-head reveal">
-            <span class="s-label">Nuestra Especialidad</span>
-            <h2 class="s-title s-title-light">Diseñados para Cada<br>Necesidad de tu Vida</h2>
-            <p class="s-sub s-sub-light">Nos especializamos en dos categorías que transforman los espacios más importantes.</p>
+<!-- ============ MANIFIESTO ============ -->
+<section class="manifesto" id="nosotros" aria-labelledby="manifesto-title">
+    <div class="wrap">
+        <h2 class="manifesto__text" id="manifesto-title" data-words>No rentamos juegos. Armamos el momento que tus invitados van a contar durante años.</h2>
+        <dl class="counters">
+            <div class="counter" data-reveal style="--d:.0s; --c:var(--red)">
+                <dt>tipos de atracciones para elegir</dt>
+                <dd><span data-count="9">9</span></dd>
+            </div>
+            <div class="counter" data-reveal style="--d:.12s; --c:var(--blue)">
+                <dt>modelos de toro mecánico</dt>
+                <dd><span data-count="7">7</span></dd>
+            </div>
+            <div class="counter" data-reveal style="--d:.24s; --c:var(--yellow)">
+                <dt>modelos de demoledor</dt>
+                <dd><span data-count="2">2</span></dd>
+            </div>
+        </dl>
+    </div>
+</section>
+
+<!-- ============ EL TREN: todas las atracciones (scroll horizontal) ============ -->
+<section class="tren" id="atracciones" aria-labelledby="tren-title">
+    <div class="tren__pin">
+        <div class="tren__bg" aria-hidden="true"></div>
+        <div class="tren__viewport">
+            <div class="tren__track" id="trenTrack">
+
+                <div class="tren__head">
+                    <span class="tren__emblem" aria-hidden="true"></span>
+                    <p class="eyebrow">Atracciones</p>
+                    <h2 id="tren-title">Elige tus vagones.</h2>
+                    <p class="tren__lead">Cada atracción es un vagón del tren de la fiesta. Súbelos todos o arma el tren a tu medida.</p>
+                </div>
+
+                <article class="vagon" style="--c:var(--red)">
+                    <div class="vagon__img"><img src="img/web/toro-cantina.webp" width="1599" height="1200" loading="lazy" decoding="async" alt="Toro mecánico rojo con colchón inflable instalado en un salón de fiestas"></div>
+                    <div class="vagon__body">
+                        <h3>Toro mecánico</h3>
+                        <p>Siete modelos para retar a toda la familia.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero un toro mecánico para mi evento. ¿Me cotizan?"><span>Quiero un toro</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <article class="vagon" style="--c:var(--green)">
+                    <div class="vagon__img"><img src="img/web/demoledor-arena.webp" width="1400" height="1054" loading="lazy" decoding="async" alt="Demoledor inflable con barra giratoria al centro del ring en una cancha"></div>
+                    <div class="vagon__body">
+                        <h3>Demoledor</h3>
+                        <p>Barra giratoria, ring inflable y retadores que no quieren caer.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero el demoledor para mi evento. ¿Me cotizan?"><span>Estoy listo para el reto</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <article class="vagon" style="--c:var(--blue)">
+                    <div class="vagon__img"><img src="img/web/inflable-sonic.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Brincolín de Sonic con tobogán y alberca de pelotas sobre pasto"></div>
+                    <div class="vagon__body">
+                        <h3>Inflables</h3>
+                        <p>Brincolines y toboganes con los personajes favoritos de los peques.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero un inflable para la fiesta. ¿Qué temas tienen disponibles?"><span>Quiero mi brincolín</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <article class="vagon" style="--c:var(--yellow)">
+                    <div class="vagon__img vagon__img--top"><img src="img/web/espuma-flyer.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Cañón de espuma para fiestas con niños jugando entre espuma hipoalergénica"></div>
+                    <div class="vagon__body">
+                        <h3>Cañón de espuma</h3>
+                        <p>Espuma hipoalergénica para niños y adultos, con operador incluido.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero el cañón de espuma para mi fiesta. ¿Tienen fecha?"><span>Quiero espuma</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <article class="vagon" style="--c:var(--cyan)">
+                    <div class="vagon__img"><img src="img/web/carreta-atardecer.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Carreta de princesas blanca con flores y corona lista para una entrada de cuento"></div>
+                    <div class="vagon__body">
+                        <h3>Carreta de princesas</h3>
+                        <p>Una entrada de cuento para cumpleaños y celebraciones especiales.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero la carreta de princesas para mi evento. ¿Me cotizan?"><span>Quiero la carreta</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <article class="vagon" style="--c:var(--tan)">
+                    <div class="vagon__img"><img src="img/web/tren-poster.webp" width="352" height="640" loading="lazy" decoding="async" alt="Tren infantil iluminado recorriendo un túnel de luces"></div>
+                    <div class="vagon__body">
+                        <h3>Tren infantil</h3>
+                        <p>Un paseo en tren entre luces para los más pequeños.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero el tren infantil para mi evento. ¿Me cotizan?"><span>Quiero el tren</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <article class="vagon" style="--c:var(--red)">
+                    <div class="vagon__img vagon__img--top"><img src="img/web/miniferia.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Miniferia con puestos de juegos de aros y destreza decorados en rojo y blanco"></div>
+                    <div class="vagon__body">
+                        <h3>Miniferia</h3>
+                        <p>Puestos de feria con aros y juegos de destreza para toda la fiesta.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero la miniferia para mi evento. ¿Me cotizan?"><span>Quiero mi miniferia</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <article class="vagon" style="--c:var(--green)">
+                    <div class="vagon__img"><img src="img/web/alberca-lanchas.webp" width="1280" height="721" loading="lazy" decoding="async" alt="Niños navegando en lanchas de remo dentro de una alberca inflable"></div>
+                    <div class="vagon__body">
+                        <h3>Alberca con lanchas</h3>
+                        <p>Los peques navegan en lanchas. También la rentamos sin lanchas.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero la alberca con lanchas para mi evento. ¿Me cotizan?"><span>Quiero la alberca</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <article class="vagon" style="--c:var(--blue)">
+                    <div class="vagon__img"><img src="img/web/scooters.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Scooters eléctricos alineados en un módulo de renta junto a un parque"></div>
+                    <div class="vagon__body">
+                        <h3>Scooters eléctricos</h3>
+                        <p>Renta por tiempo: $70 por 30 minutos.</p>
+                        <a class="vagon__cta" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero rentar scooters eléctricos. ¿Me dan información?"><span>Quiero rentar</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
+                    </div>
+                    <i class="vagon__wheel vagon__wheel--l" aria-hidden="true"></i><i class="vagon__wheel vagon__wheel--r" aria-hidden="true"></i>
+                </article>
+
+                <div class="tren__end">
+                    <h3>¿Quieres más de un vagón?</h3>
+                    <p>Combina las que quieras y te cotizamos todo junto.</p>
+                    <a class="btn btn--yellow btn--lg" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero armar un combo de atracciones para mi evento."><svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Armar mi combo</span></a>
+                </div>
+            </div>
         </div>
-        <div class="espec-grid">
-            <article class="espec-card reveal" style="--delay:.1s">
-                <span class="espec-num">01</span>
-                <div class="espec-icon">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M4 20h24M6 20V14a2 2 0 012-2h16a2 2 0 012 2v6M2 24h28M8 14V10a2 2 0 012-2h12a2 2 0 012 2v4"/></svg>
-                </div>
-                <h3>Categoría A</h3>
-                <p>Gran variedad en modelos disponibles. Diseños que combinan confort con estética contemporánea para crear el centro de tu hogar.</p>
-                <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" class="espec-link">Ver catálogo de Categoría A <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
-            </article>
-            <article class="espec-card reveal" style="--delay:.25s">
-                <span class="espec-num">02</span>
-                <div class="espec-icon">
-                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><rect x="4" y="14" width="24" height="4" rx="1"/><path d="M8 18v6M24 18v6M6 14V10M26 14V10"/><circle cx="8" cy="8" r="2"/><circle cx="16" cy="8" r="2"/><circle cx="24" cy="8" r="2"/></svg>
-                </div>
-                <h3>Categoría B</h3>
-                <p>Gran variedad para diferentes capacidades. Comodidad al mejor precio para tu familia.</p>
-                <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" class="espec-link">Ver catálogo de Categoría B <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></a>
-            </article>
+        <div class="tren__rail" aria-hidden="true"><i id="trenRail"></i></div>
+    </div>
+</section>
+
+<!-- ============ TOROS (oscuro) ============ -->
+<section class="toros" id="toros" aria-labelledby="toros-title">
+    <div class="toros__glow" aria-hidden="true"></div>
+    <div class="wrap toros__grid">
+        <div class="toros__copy">
+            <h2 id="toros-title" data-split>Siete toros. ¿Quién aguanta más?</h2>
+            <p data-reveal style="--d:.1s">Elige tu modelo, mira cómo luce y apártalo. Se sube sin zapatos y con muchas ganas de ganar.</p>
+            <a class="btn btn--red btn--lg btn--mag" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero un toro mecánico en mi evento. ¿Qué modelos tienen disponibles?" data-reveal style="--d:.2s">
+                <svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Quiero un toro en mi evento</span>
+            </a>
+        </div>
+
+        <div class="toros__ui" data-reveal style="--d:.15s">
+            <ul class="toros__list" role="tablist" aria-label="Modelos de toro mecánico" aria-orientation="vertical">
+                <li role="presentation"><button class="toros__tab is-active" role="tab" id="toro-tab-0" aria-selected="true" aria-controls="toro-panel-0" data-i="0" style="--c:var(--red)">Cantina Roja</button></li>
+                <li role="presentation"><button class="toros__tab" role="tab" id="toro-tab-1" aria-selected="false" aria-controls="toro-panel-1" data-i="1" tabindex="-1" style="--c:var(--green)">Arena Verde</button></li>
+                <li role="presentation"><button class="toros__tab" role="tab" id="toro-tab-2" aria-selected="false" aria-controls="toro-panel-2" data-i="2" tabindex="-1" style="--c:var(--yellow)">Coliseo</button></li>
+                <li role="presentation"><button class="toros__tab" role="tab" id="toro-tab-3" aria-selected="false" aria-controls="toro-panel-3" data-i="3" tabindex="-1" style="--c:var(--tan)">El Indomable</button></li>
+                <li role="presentation"><button class="toros__tab" role="tab" id="toro-tab-4" aria-selected="false" aria-controls="toro-panel-4" data-i="4" tabindex="-1" style="--c:var(--cyan)">Botas Vaqueras</button></li>
+                <li role="presentation"><button class="toros__tab" role="tab" id="toro-tab-5" aria-selected="false" aria-controls="toro-panel-5" data-i="5" tabindex="-1" style="--c:var(--blue)">Azul Clásico</button></li>
+                <li role="presentation"><button class="toros__tab" role="tab" id="toro-tab-6" aria-selected="false" aria-controls="toro-panel-6" data-i="6" tabindex="-1" style="--c:var(--red)">Llamas</button></li>
+            </ul>
+
+            <div class="toros__stage">
+                <figure class="toros__slide is-active" role="tabpanel" id="toro-panel-0" aria-labelledby="toro-tab-0">
+                    <img src="img/web/toro-cantina.webp" width="1599" height="1200" loading="lazy" decoding="async" alt="Toro mecánico Cantina Roja con colchón rojo y negro en un salón de eventos">
+                    <figcaption class="sr">Toro rojo con colchón negro y rojo, ideal para salones de fiesta.</figcaption>
+                </figure>
+                <figure class="toros__slide" role="tabpanel" id="toro-panel-1" aria-labelledby="toro-tab-1">
+                    <img src="img/web/toro-arena-verde.webp" width="1400" height="1051" loading="lazy" decoding="async" alt="Toro mecánico Arena Verde con colchón verde y negro instalado en un jardín">
+                    <figcaption class="sr">Colchón verde y negro con toro oscuro. Se luce en jardines y terrazas.</figcaption>
+                </figure>
+                <figure class="toros__slide" role="tabpanel" id="toro-panel-2" aria-labelledby="toro-tab-2">
+                    <img src="img/web/toro-coliseo.webp" width="1280" height="960" loading="lazy" decoding="async" alt="Toro mecánico Coliseo con ring café y amarillo en una cancha llena de invitados">
+                    <figcaption class="sr">Ring café y amarillo hecho para multitudes, canchas y patios escolares.</figcaption>
+                </figure>
+                <figure class="toros__slide" role="tabpanel" id="toro-panel-3" aria-labelledby="toro-tab-3">
+                    <img src="img/web/toro-indomable.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Toro mecánico El Indomable con toros y llamas decorando el ring inflable">
+                    <figcaption class="sr">El Indomable: doble toro con llamas y el nombre bien puesto.</figcaption>
+                </figure>
+                <figure class="toros__slide" role="tabpanel" id="toro-panel-4" aria-labelledby="toro-tab-4">
+                    <img src="img/web/toro-botas.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Toro mecánico Botas Vaqueras con botas inflables en las esquinas y colchón rojo">
+                    <figcaption class="sr">Botas inflables y toro café: vaquero hasta la última esquina.</figcaption>
+                </figure>
+                <figure class="toros__slide" role="tabpanel" id="toro-panel-5" aria-labelledby="toro-tab-5">
+                    <img src="img/web/toro-azul.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Toro mecánico Azul Clásico con base azul, colchón rojo y cuernos inflables gigantes">
+                    <figcaption class="sr">Base azul, colchón rojo y cuernos gigantes para tomarse la foto.</figcaption>
+                </figure>
+                <figure class="toros__slide" role="tabpanel" id="toro-panel-6" aria-labelledby="toro-tab-6">
+                    <img src="img/web/toro-llamas.webp" width="1040" height="781" loading="lazy" decoding="async" alt="Toro mecánico Llamas con flamas naranjas inflables y toro negro">
+                    <figcaption class="sr">Flamas naranjas, toro negro y cuernos rojos para el más atrevido.</figcaption>
+                </figure>
+                <div class="toros__timer" aria-hidden="true"><i></i></div>
+            </div>
+            <p class="toros__cap" id="torosCap" aria-hidden="true"></p>
         </div>
     </div>
 </section>
 
-<!-- ═══════ COLECCIONES ═══════ -->
-<section id="colecciones" class="s-gray">
-    <div class="s-wrap">
-        <div class="cols-header">
-            <div class="reveal">
-                <span class="s-label">Colecciones 2026</span>
-                <h2 class="s-title">Revisa Nuestras<br>Categorías</h2>
-            </div>
-            <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" class="btn-outline-dark reveal">Ver catálogo completo →</a>
+<!-- ============ DEMOLEDOR ============ -->
+<section class="arena" id="demoledor" aria-labelledby="arena-title">
+    <div class="wrap arena__grid">
+        <div class="arena__media">
+            <div class="arena__spin" aria-hidden="true"><i></i></div>
+            <figure class="arena__fig arena__fig--a tilt" data-reveal="scale">
+                <img src="img/web/demoledor-arena.webp" width="1400" height="1054" loading="lazy" decoding="async" alt="Demoledor inflable rojo, amarillo y azul con barra giratoria y caja de control">
+            </figure>
+            <figure class="arena__fig arena__fig--b tilt" data-reveal="scale" style="--d:.15s">
+                <img src="img/web/demoledor-escuela.webp" width="1400" height="910" loading="lazy" decoding="async" alt="Demoledor negro y azul instalado en el patio de una escuela con alumnos alrededor">
+            </figure>
         </div>
-        <div class="cols-grid">
-
-            <!-- Salas 3-2-1 -->
-            <article class="col-card reveal" style="--delay:.05s">
-                <div class="col-img">
-                    <span class="col-tag">Tipo A</span>
-                    <img src="img/WhatsApp%20Image%202026-06-19%20at%202.37.42%20PM%20(5).jpeg" alt="Salas 3-2-1">
-                </div>
-                <div class="col-info">
-                    <h3>Modelo A</h3>
-                    <p>Juegos completos en múltiples colores y telas.</p>
-                    <div class="col-foot">
-                        <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" style="font-size:.85rem;font-weight:600;color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px;">Ver catálogo de Modelo A <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Salas esquineras -->
-            <article class="col-card reveal" style="--delay:.15s">
-                <div class="col-img">
-                    <span class="col-tag">Tipo A</span>
-                    <img src="img/WhatsApp%20Image%202026-06-19%20at%202.37.42%20PM%20(3).jpeg" alt="Salas esquineras">
-                </div>
-                <div class="col-info">
-                    <h3>Modelo B</h3>
-                    <p>Diseños en L para aprovechar cada rincón. Con accesorios incluidos.</p>
-                    <div class="col-foot">
-                        <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" style="font-size:.85rem;font-weight:600;color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px;">Ver catálogo de Modelo B <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Sofá cama -->
-            <article class="col-card reveal" style="--delay:.25s">
-                <div class="col-img">
-                    <span class="col-tag">Tipo A</span>
-                    <img src="img/WhatsApp%20Image%202026-06-19%20at%203.30.57%20PM%20(1).jpeg" alt="Sofá cama">
-                </div>
-                <div class="col-info">
-                    <h3>Modelo C</h3>
-                    <p>Con función múltiple. Ideal para aprovechar el espacio.</p>
-                    <div class="col-foot">
-                        <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" style="font-size:.85rem;font-weight:600;color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px;">Ver catálogo de Modelo C <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Sillones infantiles -->
-            <article class="col-card reveal" style="--delay:.10s">
-                <div class="col-img">
-                    <span class="col-tag">Tipo B</span>
-                    <img src="img/infantiles.jpeg" alt="Sillones infantiles">
-                </div>
-                <div class="col-info">
-                    <h3>Modelo D</h3>
-                    <p>Diseñados para los más pequeños. Seguros, cómodos y en varios colores.</p>
-                    <div class="col-foot">
-                        <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" style="font-size:.85rem;font-weight:600;color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px;">Ver catálogo de Modelo D <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Comedores -->
-            <article class="col-card reveal" style="--delay:.20s">
-                <div class="col-img">
-                    <span class="col-tag">Tipo C</span>
-                    <img src="img/WhatsApp%20Image%202026-06-19%20at%202.37.42%20PM.jpeg" alt="Comedores">
-                </div>
-                <div class="col-info">
-                    <h3>Modelo E</h3>
-                    <p>Diferentes capacidades en estilos modernos y clásicos.</p>
-                    <div class="col-foot">
-                        <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" style="font-size:.85rem;font-weight:600;color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px;">Ver catálogo de Modelo E <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Mesas de centro -->
-            <article class="col-card reveal" style="--delay:.30s">
-                <div class="col-img">
-                    <span class="col-tag">Tipo D</span>
-                    <img src="img/mesa.jpeg" alt="Mesas de centro">
-                </div>
-                <div class="col-info">
-                    <h3>Modelo F</h3>
-                    <p>Complementa tu espacio con diseños elegantes en diferentes acabados.</p>
-                    <div class="col-foot">
-                        <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" style="font-size:.85rem;font-weight:600;color:inherit;text-decoration:none;display:flex;align-items:center;gap:6px;">Ver catálogo de Modelo F <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 10h10M11 6l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    </div>
-                </div>
-            </article>
-
+        <div class="arena__copy">
+            <h2 id="arena-title" data-split>Demoledor: el reto que todos quieren intentar.</h2>
+            <p data-reveal style="--d:.1s">Un ring inflable con una barra giratoria. Esquiva, salta y aguanta de pie. Tenemos dos modelos para elegir.</p>
+            <ul class="ticks" data-reveal style="--d:.18s">
+                <li><svg class="ico"><use href="#i-check-circle"/></svg>Dos modelos disponibles</li>
+                <li><svg class="ico"><use href="#i-check-circle"/></svg>Instalado en escuelas y canchas</li>
+                <li><svg class="ico"><use href="#i-check-circle"/></svg>Perfecto para retos entre equipos</li>
+            </ul>
+            <a class="btn btn--ink btn--lg btn--mag" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero el demoledor para mi evento. ¿Qué modelo me recomiendan?" data-reveal style="--d:.25s">
+                <svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Estoy listo para el reto</span>
+            </a>
         </div>
     </div>
 </section>
 
-<!-- ═══════ PROCESO ═══════ -->
-<section id="proceso" class="s-white">
-    <div class="s-wrap">
-        <div class="s-head s-head-center reveal">
-            <span class="s-label s-label-center">Así de Fácil</span>
-            <h2 class="s-title">Tu Producto Nuevo en<br>Cuatro Pasos</h2>
-            <p class="s-sub s-sub-center">Sin complicaciones ni demoras. Adquirir tu producto es una experiencia placentera.</p>
-        </div>
-        <div class="process-grid">
-            <div class="process-step reveal" style="--delay:.05s">
-                <div class="step-num"><span>01</span></div>
-                <h3>Elige tu Modelo</h3>
-                <p>Explora nuestro catálogo. Muchas opciones en todos los estilos.</p>
-            </div>
-            <div class="process-step reveal" style="--delay:.15s">
-                <div class="step-num"><span>02</span></div>
-                <h3>Cotiza sin Costo</h3>
-                <p>Contáctanos. Precios transparentes, sin letra pequeña.</p>
-            </div>
-            <div class="process-step reveal" style="--delay:.25s">
-                <div class="step-num"><span>03</span></div>
-                <h3>Confirma tu Pedido</h3>
-                <p>Confirmamos disponibilidad y coordinamos la fecha de entrega.</p>
-            </div>
-            <div class="process-step reveal" style="--delay:.35s">
-                <div class="step-num step-num-red"><span>04</span></div>
-                <h3>¡Recíbelo donde Quieras!</h3>
-                <p>Entrega cuidadosa. Garantía incluida en todos los pedidos.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════ BENEFICIOS ═══════ -->
-<section id="beneficios" class="s-gray">
-    <div class="s-wrap">
-        <div class="s-head reveal">
-            <span class="s-label">¿Por Qué Elegirnos?</span>
-            <h2 class="s-title">La Diferencia<br>que se Nota</h2>
-        </div>
-        <div class="benefits-grid">
-            <div class="ben-card reveal" style="--delay:.05s"><div class="ben-icon">🛋️</div><h3>Gran Variedad</h3><p>Gran variedad de modelos. Modernos, contemporáneos y minimalistas.</p></div>
-            <div class="ben-card reveal" style="--delay:.12s"><div class="ben-icon">⭐</div><h3>Calidad Comprobada</h3><p>Lorem ipsum materiales de alta durabilidad seleccionados para durar.</p></div>
-            <div class="ben-card reveal" style="--delay:.19s"><div class="ben-icon">💰</div><h3>Precio Justo</h3><p>Lorem ipsum accedemos directo a fabricantes para ofrecerte el mejor precio.</p></div>
-            <div class="ben-card reveal" style="--delay:.26s"><div class="ben-icon">🤝</div><h3>Asesoría Personal</h3><p>Lorem ipsum te ayudamos a elegir el modelo ideal para tu espacio.</p></div>
-            <div class="ben-card reveal" style="--delay:.33s"><div class="ben-icon">📍</div><h3>Presencia Local</h3><p>Estamos en tu ciudad. Te conocemos y sabemos lo que necesitas.</p></div>
-            <div class="ben-card reveal" style="--delay:.40s"><div class="ben-icon">🚚</div><h3>Entrega Coordinada</h3><p>Lorem ipsum coordinamos fecha y hora a tu conveniencia.</p></div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════ ESTADÍSTICAS ═══════ -->
-<section id="estadisticas" class="s-red">
-    <div class="s-wrap">
-        <div class="stats-grid">
-            <div class="stat-item reveal" style="--delay:.05s">
-                <div class="stat-val"><strong class="counter" data-target="5">0</strong><span>+</span></div>
-                <p>Años de experiencia</p>
-            </div>
-            <div class="stat-item reveal" style="--delay:.25s">
-                <div class="stat-val"><strong class="counter" data-target="1000">0</strong><span>+</span></div>
-                <p>Clientes satisfechos</p>
-            </div>
-            <div class="stat-item reveal" style="--delay:.35s">
-                <div class="stat-val"><strong class="counter" data-target="100">0</strong><span>%</span></div>
-                <p>Satisfacción garantizada</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════ TESTIMONIOS ═══════ -->
-<section id="testimonios" class="s-white">
-    <div class="s-wrap">
-        <div class="s-head s-head-center reveal">
-            <span class="s-label s-label-center">Lo Que Dicen</span>
-            <h2 class="s-title">Clientes que ya<br>Transformaron su Espacio</h2>
-        </div>
-        <div class="testi-grid">
-            <article class="testi-card reveal" style="--delay:.05s">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. La calidad es excelente y llegó en perfectas condiciones. El trato fue muy amable."</blockquote>
-                <div class="testi-author">
-                    <div class="testi-av" style="background:#97bea9">A</div>
-                    <div><strong>Nombre Apellido</strong><span>Ciudad, Estado</span></div>
-                </div>
-            </article>
-            <article class="testi-card reveal" style="--delay:.12s">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Lorem ipsum dolor sit amet consectetur. El producto superó mis expectativas en calidad y precio. Me ayudaron a elegir el modelo ideal. Muy recomendados."</blockquote>
-                <div class="testi-author">
-                    <div class="testi-av" style="background:#c8c696">R</div>
-                    <div><strong>Nombre Apellido</strong><span>Ciudad, Estado</span></div>
-                </div>
-            </article>
-            <article class="testi-card reveal" style="--delay:.19s">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Lorem ipsum ya recomendé este negocio. Tienen variedad, precios accesibles y te tratan muy bien."</blockquote>
-                <div class="testi-author">
-                    <div class="testi-av" style="background:#7aaa94">C</div>
-                    <div><strong>Nombre Apellido</strong><span>Ciudad, Estado</span></div>
-                </div>
-            </article>
-            <article class="testi-card reveal" style="--delay:.26s">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Lorem ipsum dolor sit amet. La entrega fue puntual y el servicio de primera. Sin duda volvería a comprar."</blockquote>
-                <div class="testi-author">
-                    <div class="testi-av" style="background:#ffcdb8">M</div>
-                    <div><strong>Nombre Apellido</strong><span>Ciudad, Estado</span></div>
-                </div>
-            </article>
-            <article class="testi-card reveal" style="--delay:.33s">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Lorem ipsum excelente experiencia. Los productos llegaron bien empacados. 100% recomendado."</blockquote>
-                <div class="testi-author">
-                    <div class="testi-av" style="background:#97bea9">P</div>
-                    <div><strong>Nombre Apellido</strong><span>Ciudad, Estado</span></div>
-                </div>
-            </article>
-            <article class="testi-card reveal" style="--delay:.40s">
-                <div class="stars">★★★★★</div>
-                <blockquote>"Lorem ipsum me sorprendió la calidad. La atención fue personalizada y me ayudaron a elegir perfectamente."</blockquote>
-                <div class="testi-author">
-                    <div class="testi-av" style="background:#c8c696">J</div>
-                    <div><strong>Nombre Apellido</strong><span>Ciudad, Estado</span></div>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
-<!-- ═══════ CTA ═══════ -->
-<section id="cta" class="s-dark">
-    <div class="s-wrap">
-        <div class="cta-inner reveal">
-            <span class="s-label s-label-white">¿Listo para Empezar?</span>
-            <h2 class="s-title s-title-light">Tu Producto Perfecto Está<br>a un Mensaje de Distancia</h2>
-            <p class="s-sub s-sub-light">Contáctanos y recibe atención personalizada. Te ayudamos a encontrar el producto ideal sin ningún compromiso.</p>
-            <div class="cta-btns">
-                <a href="https://wa.me/520000000000?text=Hola%2C%20me%20gustar%C3%ADa%20ver%20el%20cat%C3%A1logo" target="_blank" rel="noopener" class="btn-wa-big">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                    Chatear por WhatsApp
+<!-- ============ CARRETA (imagen que se abre a pantalla completa) ============ -->
+<section class="carreta" id="carreta" aria-labelledby="carreta-title">
+    <div class="carreta__pin">
+        <canvas class="sparkles" data-field="sparkles" aria-hidden="true"></canvas>
+        <h2 class="carreta__title" id="carreta-title">
+            <span class="carreta__t carreta__t--top">Llega como</span>
+            <span class="carreta__t carreta__t--bot">en un cuento.</span>
+        </h2>
+        <div class="carreta__frame" id="carretaFrame">
+            <img class="carreta__img" src="img/web/carreta-noche.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Carreta de princesas con luces blancas y corona frente a un castillo iluminado de noche">
+            <div class="carreta__scrim" aria-hidden="true"></div>
+            <div class="carreta__copy" id="carretaCopy">
+                <h3>Carreta de princesas</h3>
+                <p>Una entrada con luces, flores y corona para el cumpleaños o evento que lo merece.</p>
+                <a class="btn btn--yellow btn--lg" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero llegar en la carreta de princesas. ¿Tienen disponibilidad?">
+                    <svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Quiero llegar en carreta</span>
                 </a>
-                <a href="https://wa.me/c/520000000000" target="_blank" rel="noopener" class="btn-cat-ghost">Ver Catálogo Completo →</a>
+            </div>
+        </div>
+    </div>
+    <div class="wrap carreta__more">
+        <figure class="carreta__thumb tilt" data-reveal="scale"><img src="img/web/carreta-atardecer.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Carreta de princesas decorada con flores rojas y amarillas al atardecer"></figure>
+        <figure class="carreta__thumb carreta__thumb--tall tilt" data-reveal="scale" style="--d:.12s"><img src="img/web/carreta-vertical.webp" width="562" height="1000" loading="lazy" decoding="async" alt="Vista trasera de una carreta blanca de princesas con corona sobre la calle"></figure>
+        <figure class="carreta__thumb tilt" data-reveal="scale" style="--d:.24s"><img src="img/web/carreta-dia.webp" width="1400" height="1051" loading="lazy" decoding="async" alt="Carreta blanca con guirnaldas de flores y asientos acolchonados"></figure>
+    </div>
+</section>
+
+<!-- ============ INFLABLES (bento) ============ -->
+<section class="inflables" id="inflables" aria-labelledby="inf-title">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="inf-title" data-split>Inflables con los personajes que ellos aman.</h2>
+            <p data-reveal style="--d:.1s">Superhéroes, princesas, videojuegos, dinosaurios y más. Con tobogán, brincolín y todo para saltar.</p>
+        </div>
+
+        <div class="bento">
+            <a class="bento__cell b-a" href="img/web/inflable-avengers.webp" data-lightbox="inflables" data-caption="Inflable de superhéroes con tobogán">
+                <img src="img/web/inflable-avengers.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Inflable de superhéroes con tobogán rojo y azul sobre pasto">
+            </a>
+            <a class="bento__cell b-b" href="img/web/inflable-sonic.webp" data-lightbox="inflables" data-caption="Inflable de Sonic con tobogán">
+                <img src="img/web/inflable-sonic.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Castillo inflable de Sonic con tobogán y alberca de pelotas">
+            </a>
+            <a class="bento__cell b-c" href="img/web/inflable-intensamente.webp" data-lightbox="inflables" data-caption="Inflable de Intensamente">
+                <img src="img/web/inflable-intensamente.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Brincolín de Intensamente con los personajes de las emociones">
+            </a>
+            <a class="bento__cell b-d" href="img/web/inflable-mario-kart.webp" data-lightbox="inflables" data-caption="Tobogán inflable de carrito de videojuego">
+                <img src="img/web/inflable-mario-kart.webp" width="1400" height="1054" loading="lazy" decoding="async" alt="Tobogán inflable en forma de carro de carreras de videojuego">
+            </a>
+            <div class="bento__cell b-e bento__cell--color">
+                <h3>Elige el tema de tu fiesta.</h3>
+                <p>Cuéntanos el cumpleañero y su personaje favorito. Nosotros buscamos el inflable.</p>
+                <a class="btn btn--ink btn--md" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero un inflable para la fiesta de mi peque. ¿Qué temas tienen?"><svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Quiero mi inflable</span></a>
+            </div>
+            <a class="bento__cell b-f" href="img/web/inflable-princesas.webp" data-lightbox="inflables" data-caption="Castillo inflable de princesas">
+                <img src="img/web/inflable-princesas.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Castillo inflable rosa de princesas con tobogán">
+            </a>
+            <a class="bento__cell b-g" href="img/web/inflable-dinosaurio.webp" data-lightbox="inflables" data-caption="Tobogán de dinosaurios">
+                <img src="img/web/inflable-dinosaurio.webp" width="1040" height="781" loading="lazy" decoding="async" alt="Tobogán inflable de dinosaurios con garras y cabezas de T-Rex">
+            </a>
+            <a class="bento__cell b-h" href="img/web/inflable-tiktok.webp" data-lightbox="inflables" data-caption="Inflable morado temático">
+                <img src="img/web/inflable-tiktok.webp" width="1024" height="768" loading="lazy" decoding="async" alt="Brincolín morado y negro con tobogán y diseño de redes sociales">
+            </a>
+            <a class="bento__cell b-i" href="img/web/inflable-ladybug.webp" data-lightbox="inflables" data-caption="Castillo inflable de heroína con puntos rojos">
+                <img src="img/web/inflable-ladybug.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Castillo inflable rojo con tobogán de catarina y héroe enmascarado">
+            </a>
+        </div>
+
+        <div class="more" data-reveal>
+            <h3>Más diseños para elegir</h3>
+            <ul class="more__row">
+                <li><a href="img/web/inflable-castillo.webp" data-lightbox="inflables" data-caption="Castillo inflable multicolor"><img src="img/web/inflable-castillo.webp" width="1200" height="900" loading="lazy" decoding="async" alt="Castillo inflable multicolor con tobogán verde"></a></li>
+                <li><a href="img/web/inflable-heroes.webp" data-lightbox="inflables" data-caption="Combo de inflables de personajes"><img src="img/web/inflable-heroes.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Inflables con personajes de superhéroes, princesas y caricaturas"></a></li>
+                <li><a href="img/web/inflable-spiderman.webp" data-lightbox="inflables" data-caption="Inflable del hombre araña"><img src="img/web/inflable-spiderman.webp" width="1400" height="788" loading="lazy" decoding="async" alt="Inflable del hombre araña con tobogán azul"></a></li>
+                <li><a href="img/web/inflable-frozen.webp" data-lightbox="inflables" data-caption="Brincolín redondo con personajes"><img src="img/web/inflable-frozen.webp" width="1040" height="780" loading="lazy" decoding="async" alt="Brincolín redondo con personajes infantiles y tobogán"></a></li>
+                <li><a href="img/web/inflable-toy-story.webp" data-lightbox="inflables" data-caption="Castillo inflable de juguetes"><img src="img/web/inflable-toy-story.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Castillo inflable de Toy Story con tobogán de alienígenas"></a></li>
+                <li><a href="img/web/inflable-princesas-calle.webp" data-lightbox="inflables" data-caption="Castillo de princesas"><img src="img/web/inflable-princesas-calle.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Castillo inflable de princesas con torres rosas y tobogán"></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CAÑÓN DE ESPUMA ============ -->
+<section class="espuma" id="espuma" aria-labelledby="espuma-title">
+    <canvas class="bubbles" data-field="bubbles" aria-hidden="true"></canvas>
+    <div class="wrap espuma__grid">
+        <div class="espuma__visual" data-reveal="scale">
+            <div class="espuma__flyer tilt">
+                <img src="img/web/espuma-flyer.webp" width="800" height="1200" loading="lazy" decoding="async" alt="Cartel del cañón de espuma de Karmax: espuma hipoalergénica, segura, con operador incluido, instalación y desmontaje">
+            </div>
+        </div>
+        <div class="espuma__copy">
+            <h2 id="espuma-title" data-split>Cañón de espuma: la fiesta que nadie olvida.</h2>
+            <p data-reveal style="--d:.1s">Llevamos el cañón, lo instalamos y lo operamos. Tú y tus invitados solo ponen las ganas de mojarse.</p>
+            <ul class="feats" data-reveal style="--d:.18s">
+                <li><svg class="ico"><use href="#i-drop"/></svg><div><strong>Espuma hipoalergénica</strong><span>Pensada para pieles sensibles.</span></div></li>
+                <li><svg class="ico"><use href="#i-shield-check"/></svg><div><strong>Segura para niños y adultos</strong><span>Diversión para todas las edades.</span></div></li>
+                <li><svg class="ico"><use href="#i-user-gear"/></svg><div><strong>Operador incluido</strong><span>Nosotros manejamos el cañón.</span></div></li>
+                <li><svg class="ico"><use href="#i-truck"/></svg><div><strong>Instalación y desmontaje</strong><span>Llegamos, armamos y recogemos.</span></div></li>
+            </ul>
+            <a class="btn btn--ink btn--lg btn--mag" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero el cañón de espuma para mi fiesta. ¿Tienen fecha disponible?" data-reveal style="--d:.26s">
+                <svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Quiero mi fiesta de espuma</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ TREN INFANTIL (video, noche) ============ -->
+<section class="night" id="tren-infantil" aria-labelledby="night-title">
+    <div class="night__aurora" aria-hidden="true"><i></i><i></i></div>
+    <div class="wrap night__grid">
+        <div class="night__copy">
+            <h2 id="night-title" data-split>Tren infantil: un paseo entre luces.</h2>
+            <p data-reveal style="--d:.1s">Un recorrido en tren para los más pequeños, con luces y mucha magia. Ideal para ferias y eventos especiales.</p>
+            <a class="btn btn--red btn--lg btn--mag" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero el tren infantil para mi evento. ¿Me cotizan?" data-reveal style="--d:.2s">
+                <svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Quiero el tren en mi evento</span>
+            </a>
+        </div>
+        <div class="night__phone" data-reveal="scale">
+            <div class="night__led" aria-hidden="true"></div>
+            <div class="night__screen">
+                <video id="trenVideo" src="img/web/tren-infantil.mp4" poster="img/web/tren-poster.webp" width="352" height="640" muted loop playsinline preload="none" aria-label="Video del tren infantil recorriendo un túnel de luces"></video>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ═══════ CONTACTO ═══════ -->
-<section id="contacto" class="s-gray">
-    <div class="s-wrap">
-        <div class="contact-grid">
-            <div class="contact-info reveal">
-                <span class="s-label">Contáctanos</span>
-                <h2 class="s-title">¿Tienes Alguna<br>Pregunta?</h2>
-                <p class="s-sub">Nuestro equipo está listo para ayudarte. Escríbenos y te respondemos a la brevedad.</p>
-                <div class="contact-items">
-                    <div class="contact-item"><div class="ci-icon">📱</div><div><strong>WhatsApp</strong><span>+52 000 000 0000</span></div></div>
-                    <div class="contact-item"><div class="ci-icon">📍</div><div><strong>Ubicación</strong><span>Ciudad, Estado — Sucursal Principal</span></div></div>
-                    <div class="contact-item"><div class="ci-icon">🕐</div><div><strong>Horario</strong><span>Lun–Sáb · 10:30am–3:00pm y 5:00pm–8:00pm<br>Dom · 12:00pm–4:00pm</span></div></div>
+<!-- ============ EXTRAS (acordeón de franjas) ============ -->
+<section class="extras" id="extras" aria-labelledby="extras-title">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="extras-title" data-split>Y para completar la fiesta.</h2>
+        </div>
+        <div class="strips" id="strips">
+            <article class="strip is-active" tabindex="0">
+                <img src="img/web/miniferia.webp" width="900" height="1200" loading="lazy" decoding="async" alt="Miniferia con puestos de aros y juegos de destreza">
+                <div class="strip__body">
+                    <h3>Miniferia</h3>
+                    <p>Puestos de aros y destreza que convierten el jardín en una feria.</p>
+                    <a class="btn btn--yellow btn--md" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero la miniferia para mi evento. ¿Me cotizan?"><span>Quiero mi miniferia</span><svg class="ico"><use href="#i-arrow-right"/></svg></a>
                 </div>
-                <div class="contact-map" style="margin:20px 0;border-radius:12px;overflow:hidden;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7569.250110735432!2d-97.4061281064209!3d18.455325500000022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85c5bd5b84d382ef%3A0xef75ca0212f2781a!2sSalas%20%22ONLINE%22!5e0!3m2!1sen!2sus!4v1782182154196!5m2!1sen!2sus" width="100%" height="240" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </article>
+            <article class="strip" tabindex="0">
+                <img src="img/web/alberca-lanchas.webp" width="1280" height="721" loading="lazy" decoding="async" alt="Alberca con lanchas de remo para niños">
+                <div class="strip__body">
+                    <h3>Alberca con lanchas</h3>
+                    <p>Los peques navegan en sus lanchas. También disponible sin lanchas.</p>
+                    <a class="btn btn--yellow btn--md" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero la alberca con lanchas. ¿Me cotizan?"><span>Quiero la alberca</span><svg class="ico"><use href="#i-arrow-right"/></svg></a>
                 </div>
-                <div class="social-row">
-                    <a href="https://www.instagram.com/salas.online.tehuacan" target="_blank" rel="noopener" class="soc-btn" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                    </a>
-                    <a href="https://www.facebook.com/share/1BHe1Nc6b6/" target="_blank" rel="noopener" class="soc-btn" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                    <a href="https://www.tiktok.com/@salasonline3" target="_blank" rel="noopener" class="soc-btn" aria-label="TikTok">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-                    </a>
+            </article>
+            <article class="strip" tabindex="0">
+                <img src="img/web/scooters.webp" width="1400" height="1050" loading="lazy" decoding="async" alt="Scooters eléctricos disponibles para renta en un parque">
+                <div class="strip__body">
+                    <h3>Scooters eléctricos</h3>
+                    <p>Renta por tiempo: $70 por 30 minutos. Listos para rodar.</p>
+                    <a class="btn btn--yellow btn--md" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero rentar scooters eléctricos. ¿Me dan información?"><span>Quiero rentar</span><svg class="ico"><use href="#i-arrow-right"/></svg></a>
                 </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============ OCASIONES ============ -->
+<section class="occ" id="eventos" aria-labelledby="occ-title">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="occ-title" data-split>Para cada celebración.</h2>
+            <p data-reveal style="--d:.1s">Elige tu tipo de evento y te ayudamos a armar la combinación perfecta.</p>
+        </div>
+        <ul class="occ__list" id="occList">
+            <li><a class="occ__row" href="#contacto" data-event="Cumpleaños" data-img="img/web/inflable-castillo.webp"><span class="occ__name">Cumpleaños</span><span class="occ__desc">Inflables, espuma y toros para el festejado.</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a></li>
+            <li><a class="occ__row" href="#contacto" data-event="Escuela" data-img="img/web/demoledor-escuela.webp"><span class="occ__name">Escuelas</span><span class="occ__desc">Convivios, kermeses y cierres de ciclo.</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a></li>
+            <li><a class="occ__row" href="#contacto" data-event="Fiesta familiar" data-img="img/web/carreta-atardecer.webp"><span class="occ__name">Fiestas familiares</span><span class="occ__desc">Reuniones donde juegan desde los abuelos hasta los nietos.</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a></li>
+            <li><a class="occ__row" href="#contacto" data-event="Evento empresarial" data-img="img/web/toro-cantina.webp"><span class="occ__name">Eventos empresariales</span><span class="occ__desc">Integraciones con actividades para todo el equipo.</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a></li>
+            <li><a class="occ__row" href="#contacto" data-event="Graduación" data-img="img/web/espuma-flyer.webp"><span class="occ__name">Graduaciones</span><span class="occ__desc">El cierre que merece una fiesta de verdad.</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a></li>
+            <li><a class="occ__row" href="#contacto" data-event="Festival" data-img="img/web/toro-coliseo.webp"><span class="occ__name">Festivales</span><span class="occ__desc">Atracciones para multitudes en ferias y festivales.</span><svg class="ico"><use href="#i-arrow-up-right"/></svg></a></li>
+        </ul>
+        <div class="occ__preview" id="occPreview" aria-hidden="true"><img alt="" width="1200" height="900"></div>
+        <div class="occ__cta" data-reveal>
+            <a class="btn btn--red btn--lg btn--mag" href="#contacto"><svg class="ico"><use href="#i-calendar-check"/></svg><span>Clic aquí y cuéntanos tu evento</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CÓMO FUNCIONA ============ -->
+<section class="steps" id="como-funciona" aria-labelledby="steps-title">
+    <div class="wrap">
+        <div class="section-head">
+            <h2 id="steps-title" data-split>Así de fácil es subir a bordo.</h2>
+        </div>
+        <div class="steps__track" id="stepsTrack">
+            <div class="steps__line" aria-hidden="true"><i id="stepsFill"></i><span class="steps__loco" id="stepsLoco"></span></div>
+            <ol class="steps__list">
+                <li class="step" data-reveal style="--d:.0s">
+                    <span class="step__ico"><svg class="ico"><use href="#i-chat-circle-dots"/></svg></span>
+                    <h3>Cuéntanos tu evento</h3>
+                    <p>Fecha, lugar y cuántos invitados esperas.</p>
+                </li>
+                <li class="step" data-reveal style="--d:.1s">
+                    <span class="step__ico"><svg class="ico"><use href="#i-balloon"/></svg></span>
+                    <h3>Elige tus atracciones</h3>
+                    <p>Te asesoramos para combinar según el espacio y las edades.</p>
+                </li>
+                <li class="step" data-reveal style="--d:.2s">
+                    <span class="step__ico"><svg class="ico"><use href="#i-calendar-check"/></svg></span>
+                    <h3>Aparta tu fecha</h3>
+                    <p>Confirmamos disponibilidad y tu cotización por WhatsApp.</p>
+                </li>
+                <li class="step" data-reveal style="--d:.3s">
+                    <span class="step__ico"><svg class="ico"><use href="#i-truck"/></svg></span>
+                    <h3>Llegamos y armamos</h3>
+                    <p>Instalamos todo y desmontamos al terminar. Tú solo disfrutas.</p>
+                </li>
+            </ol>
+        </div>
+        <div class="steps__cta" data-reveal>
+            <a class="btn btn--ink btn--lg btn--mag" href="https://wa.me/522221314976" data-wa="Hola Karmax, estoy listo para planear mi fiesta. ¿Por dónde empezamos?"><svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Estoy listo, empecemos</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ PREGUNTAS FRECUENTES ============ -->
+<section class="faq" id="preguntas" aria-labelledby="faq-title">
+    <div class="wrap faq__grid">
+        <div class="faq__head">
+            <h2 id="faq-title" data-split>Preguntas frecuentes.</h2>
+            <p data-reveal style="--d:.1s">¿No encuentras tu duda? Escríbenos y te respondemos por WhatsApp.</p>
+        </div>
+        <div class="faq__list" data-reveal style="--d:.1s">
+            <div class="faq__item">
+                <h3><button class="faq__q" id="faq-q-0" aria-expanded="false" aria-controls="faq-a-0"><span>¿En qué zonas dan servicio?</span><svg class="ico"><use href="#i-plus"/></svg></button></h3>
+                <div class="faq__a" id="faq-a-0" role="region" aria-labelledby="faq-q-0"><div><p>Atendemos la Ciudad de Puebla y alrededores. Escríbenos la ubicación de tu evento y confirmamos la cobertura.</p></div></div>
             </div>
-            <div class="contact-form-wrap reveal" style="--delay:.2s">
-                <div class="contact-form">
-                    <h3>Solicita tu Cotización</h3>
-                    <p>Llena el formulario y te contactamos en minutos.</p>
-                    <form id="wa-form" novalidate>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Nombre completo</label>
-                                <input type="text" id="name" required placeholder="Ej. Nombre Apellido" autocomplete="name">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Teléfono (opcional)</label>
-                                <input type="tel" id="phone" placeholder="Ej. 000 000 0000" autocomplete="tel">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="interest">¿En qué estás interesado?</label>
-                            <select id="interest" required>
-                                <option value="" disabled selected>Selecciona una opción</option>
-                                <option value="Categoría A">Categoría A</option>
-                                <option value="Categoría B">Categoría B</option>
-                                <option value="Combo completo">Combo completo</option>
-                                <option value="Otro">Otro</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Cuéntanos más (opcional)</label>
-                            <textarea id="message" placeholder="Ej. Busco un producto específico..." rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn-form-submit">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-                            Enviar por WhatsApp
-                        </button>
-                    </form>
-                </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1"><span>¿Cómo aparto mi fecha?</span><svg class="ico"><use href="#i-plus"/></svg></button></h3>
+                <div class="faq__a" id="faq-a-1" role="region" aria-labelledby="faq-q-1"><div><p>Mándanos un mensaje por WhatsApp con la fecha, el lugar y las atracciones que te interesan. Te confirmamos disponibilidad y cotización.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2"><span>¿Qué incluye el servicio?</span><svg class="ico"><use href="#i-plus"/></svg></button></h3>
+                <div class="faq__a" id="faq-a-2" role="region" aria-labelledby="faq-q-2"><div><p>Depende de la atracción. El cañón de espuma incluye operador, instalación y desmontaje. Al cotizar te detallamos qué incluye cada opción.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3"><span>¿Puedo combinar varias atracciones?</span><svg class="ico"><use href="#i-plus"/></svg></button></h3>
+                <div class="faq__a" id="faq-a-3" role="region" aria-labelledby="faq-q-3"><div><p>Sí. Te ayudamos a armar el combo ideal según el espacio, la edad de los invitados y el tipo de evento.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4"><span>¿La espuma es segura para los niños?</span><svg class="ico"><use href="#i-plus"/></svg></button></h3>
+                <div class="faq__a" id="faq-a-4" role="region" aria-labelledby="faq-q-4"><div><p>Usamos espuma hipoalergénica, segura para niños y adultos.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5"><span>¿Qué espacio necesito?</span><svg class="ico"><use href="#i-plus"/></svg></button></h3>
+                <div class="faq__a" id="faq-a-5" role="region" aria-labelledby="faq-q-5"><div><p>Cada atracción pide un espacio distinto. Cuéntanos si será en patio, salón, jardín o cancha y te recomendamos qué instalar.</p></div></div>
             </div>
         </div>
+    </div>
+</section>
+
+<!-- ============ CONTACTO (oscuro) ============ -->
+<section class="contact" id="contacto" aria-labelledby="contact-title">
+    <div class="contact__glow" aria-hidden="true"></div>
+    <div class="wrap contact__grid">
+        <div class="contact__copy">
+            <p class="eyebrow eyebrow--light">Aparta tu fecha</p>
+            <h2 id="contact-title" data-split>¿Ya tienes fecha? Nosotros ponemos la fiesta.</h2>
+            <p data-reveal style="--d:.1s">Cuéntanos de tu evento y te respondemos por WhatsApp con disponibilidad y cotización.</p>
+            <ul class="contact__list" data-reveal style="--d:.18s">
+                <li><svg class="ico"><use href="#i-phone"/></svg><div><span>WhatsApp principal</span><a href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero información de sus atracciones.">222 131 4976</a></div></li>
+                <li><svg class="ico"><use href="#i-phone"/></svg><div><span>WhatsApp alterno</span><a href="https://wa.me/522226849456" data-wa="Hola Karmax, quiero información de sus atracciones.">222 684 9456</a></div></li>
+                <li><svg class="ico"><use href="#i-map-pin"/></svg><div><span>Cobertura</span><strong>Ciudad de Puebla y alrededores</strong></div></li>
+                <li><svg class="ico"><use href="#i-facebook-logo"/></svg><div><span>Facebook</span><a href="https://www.facebook.com/share/1C2D5RtzEf/" target="_blank" rel="noopener">Atracciones Karmax</a></div></li>
+            </ul>
+        </div>
+
+        <form class="form" id="waForm" novalidate data-reveal style="--d:.15s" aria-labelledby="form-title">
+            <h3 id="form-title">Cuéntanos de tu evento</h3>
+            <div class="field">
+                <label for="f-name">Tu nombre</label>
+                <input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Ej. Mariana López">
+                <p class="field__err" id="f-name-err" role="alert"></p>
+            </div>
+            <div class="field-row">
+                <div class="field">
+                    <label for="f-date">Fecha del evento</label>
+                    <input id="f-date" name="date" type="date" required>
+                    <p class="field__err" id="f-date-err" role="alert"></p>
+                </div>
+                <div class="field">
+                    <label for="f-type">Tipo de evento</label>
+                    <select id="f-type" name="type" required>
+                        <option value="" selected disabled>Elige una opción</option>
+                        <option>Cumpleaños</option>
+                        <option>Escuela</option>
+                        <option>Fiesta familiar</option>
+                        <option>Evento empresarial</option>
+                        <option>Graduación</option>
+                        <option>Festival</option>
+                        <option>Otro</option>
+                    </select>
+                    <p class="field__err" id="f-type-err" role="alert"></p>
+                </div>
+            </div>
+            <fieldset class="field">
+                <legend>¿Qué atracciones te interesan?</legend>
+                <div class="chips">
+                    <label class="chip"><input type="checkbox" name="attr" value="Toro mecánico"><span>Toro mecánico</span></label>
+                    <label class="chip"><input type="checkbox" name="attr" value="Demoledor"><span>Demoledor</span></label>
+                    <label class="chip"><input type="checkbox" name="attr" value="Inflables"><span>Inflables</span></label>
+                    <label class="chip"><input type="checkbox" name="attr" value="Cañón de espuma"><span>Cañón de espuma</span></label>
+                    <label class="chip"><input type="checkbox" name="attr" value="Carreta de princesas"><span>Carreta de princesas</span></label>
+                    <label class="chip"><input type="checkbox" name="attr" value="Tren infantil"><span>Tren infantil</span></label>
+                    <label class="chip"><input type="checkbox" name="attr" value="Miniferia"><span>Miniferia</span></label>
+                    <label class="chip"><input type="checkbox" name="attr" value="Alberca"><span>Alberca</span></label>
+                    <label class="chip"><input type="checkbox" name="attr" value="Scooters"><span>Scooters</span></label>
+                </div>
+            </fieldset>
+            <div class="field">
+                <label for="f-msg">Algo más que debamos saber <small>(opcional)</small></label>
+                <textarea id="f-msg" name="msg" rows="3" placeholder="Ej. Será en un jardín, para 40 invitados"></textarea>
+            </div>
+            <button class="btn btn--red btn--lg btn--block" type="submit"><svg class="ico"><use href="#i-whatsapp-logo"/></svg><span>Mandar mi solicitud por WhatsApp</span></button>
+            <p class="form__note" id="formNote" role="status" aria-live="polite">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+        </form>
     </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer id="footer">
-    <div class="footer-wrap">
-        <div class="footer-top">
-            <div class="footer-brand">
-                <img src="img/logo.png" alt="Mi Negocio" class="footer-logo-img">
-                <p>Tienda especializada en productos de alta calidad. Tu satisfacción es nuestra pasión desde hace más de 5 años.</p>
-                <div class="footer-soc">
-                    <a href="https://www.instagram.com/salas.online.tehuacan" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
-                    <a href="https://www.facebook.com/share/1BHe1Nc6b6/" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
-                    <a href="https://www.tiktok.com/@salasonline3" target="_blank" rel="noopener" aria-label="TikTok">TK</a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Productos</h4>
-                <ul>
-                    <li><a href="#colecciones">Categoría A</a></li>
-                    <li><a href="#colecciones">Categoría B</a></li>
-                    <li><a href="https://wa.me/c/520000000000" target="_blank" rel="noopener">Catálogo Completo</a></li>
-                    <li><a href="#colecciones">Nuevos Modelos</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Empresa</h4>
-                <ul>
-                    <li><a href="#especialidades">Especialidades</a></li>
-                    <li><a href="#beneficios">¿Por qué Elegirnos?</a></li>
-                    <li><a href="#proceso">Proceso de Compra</a></li>
-                    <li><a href="#testimonios">Reseñas</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Contacto</h4>
-                <ul>
-                    <li><a href="https://wa.me/520000000000" target="_blank" rel="noopener">WhatsApp Directo</a></li>
-                    <li><a href="https://wa.me/c/520000000000" target="_blank" rel="noopener">Catálogo WA</a></li>
-                    <li><a href="https://www.instagram.com/salas.online.tehuacan" target="_blank" rel="noopener">Instagram</a></li>
-                    <li><a href="https://www.facebook.com/share/1BHe1Nc6b6/" target="_blank" rel="noopener">Facebook</a></li>
-                </ul>
-            </div>
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+    <div class="wrap footer__grid">
+        <div class="footer__brand">
+            <img src="img/web/logo-full.webp" width="900" height="827" loading="lazy" alt="Logotipo de Atracciones Karmax: locomotora con toro y la palabra Karmax">
+            <p>Atracciones para fiestas y eventos en la Ciudad de Puebla y alrededores.</p>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 Mi Negocio · Todos los derechos reservados.</p>
-            <p>Ciudad, Estado · País</p>
+        <nav class="footer__col" aria-label="Atracciones">
+            <h3>Atracciones</h3>
+            <a href="#toros">Toro mecánico</a>
+            <a href="#demoledor">Demoledor</a>
+            <a href="#inflables">Inflables</a>
+            <a href="#espuma">Cañón de espuma</a>
+            <a href="#carreta">Carreta de princesas</a>
+            <a href="#tren-infantil">Tren infantil</a>
+        </nav>
+        <nav class="footer__col" aria-label="Información">
+            <h3>Información</h3>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#eventos">Eventos</a>
+            <a href="#como-funciona">Cómo funciona</a>
+            <a href="#preguntas">Preguntas frecuentes</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="footer__col">
+            <h3>Hablemos</h3>
+            <a href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero información de sus atracciones.">222 131 4976</a>
+            <a href="https://wa.me/522226849456" data-wa="Hola Karmax, quiero información de sus atracciones.">222 684 9456</a>
+            <a href="https://www.facebook.com/share/1C2D5RtzEf/" target="_blank" rel="noopener">Facebook</a>
         </div>
+    </div>
+    <div class="wrap footer__bottom">
+        <p>&copy; 2026 Atracciones Karmax. Todos los derechos reservados.</p>
+        <a class="footer__top" href="#inicio">Volver arriba <svg class="ico"><use href="#i-arrow-up-right"/></svg></a>
     </div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/520000000000" target="_blank" rel="noopener" class="wa-float" aria-label="Contactar por WhatsApp">
-    <span class="wa-tip">¡Escríbenos!</span>
-    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+<!-- Botón flotante de WhatsApp -->
+<a class="wa" id="waFloat" href="https://wa.me/522221314976" data-wa="Hola Karmax, quiero información de sus atracciones." aria-label="Escribir a Karmax por WhatsApp">
+    <span class="wa__tip" aria-hidden="true">¿Hablamos de tu fiesta?</span>
+    <span class="wa__btn"><svg class="ico"><use href="#i-whatsapp-logo"/></svg></span>
 </a>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galería de inflables" hidden>
+    <button class="lightbox__close" id="lbClose" aria-label="Cerrar galería"><svg class="ico"><use href="#i-x"/></svg></button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Foto anterior"><svg class="ico"><use href="#i-caret-left"/></svg></button>
+    <figure class="lightbox__fig">
+        <img id="lbImg" alt="">
+        <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Foto siguiente"><svg class="ico"><use href="#i-caret-right"/></svg></button>
+</div>
+
+<!-- Iconos Phosphor (bold / fill) como sprite SVG -->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><symbol id="i-arrow-right" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></symbol><symbol id="i-arrow-up-right" viewBox="0 0 256 256"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"/></symbol><symbol id="i-caret-down" viewBox="0 0 256 256"><path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/></symbol><symbol id="i-plus" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"/></symbol><symbol id="i-minus" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128Z"/></symbol><symbol id="i-x" viewBox="0 0 256 256"><path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"/></symbol><symbol id="i-list" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"/></symbol><symbol id="i-check" viewBox="0 0 256 256"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></symbol><symbol id="i-check-circle" viewBox="0 0 256 256"><path d="M176.49,95.51a12,12,0,0,1,0,17l-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L112,143l47.51-47.52A12,12,0,0,1,176.49,95.51ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Z"/></symbol><symbol id="i-caret-left" viewBox="0 0 256 256"><path d="M168.49,199.51a12,12,0,0,1-17,17l-80-80a12,12,0,0,1,0-17l80-80a12,12,0,0,1,17,17L97,128Z"/></symbol><symbol id="i-caret-right" viewBox="0 0 256 256"><path d="M184.49,136.49l-80,80a12,12,0,0,1-17-17L159,128,87.51,56.49a12,12,0,1,1,17-17l80,80A12,12,0,0,1,184.49,136.49Z"/></symbol><symbol id="i-calendar-check" viewBox="0 0 256 256"><path d="M208,28H188V24a12,12,0,0,0-24,0v4H92V24a12,12,0,0,0-24,0v4H48A20,20,0,0,0,28,48V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V48A20,20,0,0,0,208,28ZM68,52a12,12,0,0,0,24,0h72a12,12,0,0,0,24,0h16V76H52V52ZM52,204V100H204V204Zm120.49-84.49a12,12,0,0,1,0,17l-48,48a12,12,0,0,1-17,0l-24-24a12,12,0,0,1,17-17L116,159l39.51-39.52A12,12,0,0,1,172.49,119.51Z"/></symbol><symbol id="i-map-pin" viewBox="0 0 256 256"><path d="M128,60a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,60Zm0,64a20,20,0,1,1,20-20A20,20,0,0,1,128,124Zm0-112a92.1,92.1,0,0,0-92,92c0,77.36,81.64,135.4,85.12,137.83a12,12,0,0,0,13.76,0,259,259,0,0,0,42.18-39C205.15,170.57,220,136.37,220,104A92.1,92.1,0,0,0,128,12Zm31.3,174.71A249.35,249.35,0,0,1,128,216.89a249.35,249.35,0,0,1-31.3-30.18C80,167.37,60,137.31,60,104a68,68,0,0,1,136,0C196,137.31,176,167.37,159.3,186.71Z"/></symbol><symbol id="i-phone" viewBox="0 0 256 256"><path d="M224,154.8l-47.09-21.11-.18-.08a19.94,19.94,0,0,0-19,1.75,13.08,13.08,0,0,0-1.12.84l-22.31,19c-13-7.05-26.43-20.37-33.49-33.21l19.06-22.66a11.76,11.76,0,0,0,.85-1.15,20,20,0,0,0,1.66-18.83,1.42,1.42,0,0,1-.08-.18L101.2,32A20.06,20.06,0,0,0,80.42,20.15,60.27,60.27,0,0,0,28,80c0,81.61,66.39,148,148,148a60.27,60.27,0,0,0,59.85-52.42A20.06,20.06,0,0,0,224,154.8ZM176,204A124.15,124.15,0,0,1,52,80,36.29,36.29,0,0,1,80.48,44.46l18.82,42L80.14,109.28a12,12,0,0,0-.86,1.16A20,20,0,0,0,78,130.08c9.42,19.28,28.83,38.56,48.31,48A20,20,0,0,0,146,176.63a11.63,11.63,0,0,0,1.11-.85l22.43-19.07,42,18.81A36.29,36.29,0,0,1,176,204Z"/></symbol><symbol id="i-drop" viewBox="0 0 256 256"><path d="M134.88,6.17a12,12,0,0,0-13.76,0,259,259,0,0,0-42.18,39C50.85,77.43,36,111.62,36,144a92,92,0,0,0,184,0C220,66.64,138.36,8.6,134.88,6.17ZM128,212a68.07,68.07,0,0,1-68-68c0-33.31,20-63.37,36.7-82.71A249.35,249.35,0,0,1,128,31.11a249.35,249.35,0,0,1,31.3,30.18C176,80.63,196,110.69,196,144A68.07,68.07,0,0,1,128,212Zm49.62-52.4a52,52,0,0,1-34,34,12.2,12.2,0,0,1-3.6.55,12,12,0,0,1-3.6-23.45,28,28,0,0,0,18.32-18.32,12,12,0,0,1,22.9,7.2Z"/></symbol><symbol id="i-shield-check" viewBox="0 0 256 256"><path d="M208,36H48A20,20,0,0,0,28,56v56c0,54.29,26.32,87.22,48.4,105.29,23.71,19.39,47.44,26,48.44,26.29a12.1,12.1,0,0,0,6.32,0c1-.28,24.73-6.9,48.44-26.29,22.08-18.07,48.4-51,48.4-105.29V56A20,20,0,0,0,208,36Zm-4,76c0,35.71-13.09,64.69-38.91,86.15A126.28,126.28,0,0,1,128,219.38a126.14,126.14,0,0,1-37.09-21.23C65.09,176.69,52,147.71,52,112V60H204ZM79.51,144.49a12,12,0,1,1,17-17L112,143l47.51-47.52a12,12,0,0,1,17,17l-56,56a12,12,0,0,1-17,0Z"/></symbol><symbol id="i-user-gear" viewBox="0 0 256 256"><path d="M148.5,156.53a72,72,0,1,0-89,0,124,124,0,0,0-48.69,35.75,12,12,0,0,0,18.38,15.44C48.54,184.69,75.11,172,104,172c37,0,61.12,19.42,74.81,35.72a12,12,0,1,0,18.38-15.44A124,124,0,0,0,148.5,156.53ZM56,100a48,48,0,1,1,48,48A48.05,48.05,0,0,1,56,100Zm190.53,40-7.11,2.31,4.39,6.05a12,12,0,1,1-19.41,14.11l-4.4-6.06-4.4,6.06a12,12,0,1,1-19.41-14.11l4.39-6.05L193.47,140a12,12,0,1,1,7.41-22.83l7.12,2.31V112a12,12,0,0,1,24,0v7.48l7.12-2.31A12,12,0,1,1,246.53,140Z"/></symbol><symbol id="i-truck" viewBox="0 0 256 256"><path d="M255.14,115.54l-14-35A19.89,19.89,0,0,0,222.58,68H196V64a12,12,0,0,0-12-12H32A20,20,0,0,0,12,72V184a20,20,0,0,0,20,20H46.06a36,36,0,0,0,67.88,0h44.12a36,36,0,0,0,67.88,0H236a20,20,0,0,0,20-20V120A21.7,21.7,0,0,0,255.14,115.54ZM196,92h23.88l6.4,16H196ZM80,204a12,12,0,1,1,12-12A12,12,0,0,1,80,204Zm92-41.92A36.32,36.32,0,0,0,158.06,180H113.94a36,36,0,0,0-67.88,0H36V140H172ZM172,116H36V76H172Zm20,88a12,12,0,1,1,12-12A12,12,0,0,1,192,204Zm40-24h-6.06A36.09,36.09,0,0,0,196,156.23V132h36Z"/></symbol><symbol id="i-cake" viewBox="0 0 256 256"><path d="M236,112a28,28,0,0,0-28-28H140V81.94A36.07,36.07,0,0,0,164,48c0-31.06-29.38-46.11-30.63-46.73a12,12,0,0,0-10.74,0C121.38,1.89,92,16.94,92,48a36.07,36.07,0,0,0,24,33.94V84H48a28,28,0,0,0-28,28v23.33a44.7,44.7,0,0,0,8,25.49V200a28,28,0,0,0,28,28H200a28,28,0,0,0,28-28V160.82a44.7,44.7,0,0,0,8-25.49ZM124,29.93a42.49,42.49,0,0,1,4-3.57,41.26,41.26,0,0,1,4,3.57c5.33,5.52,8,11.6,8,18.07a12,12,0,0,1-24,0C116,41.53,118.71,35.45,124,29.93ZM44,112a4,4,0,0,1,4-4H208a4,4,0,0,1,4,4v23.33c0,11.1-8.72,20.37-19.43,20.66A20,20,0,0,1,172,136a12,12,0,0,0-24,0,20,20,0,0,1-40,0,12,12,0,0,0-24,0,20,20,0,0,1-20.57,20C52.72,155.7,44,146.43,44,135.33Zm156,92H56a4,4,0,0,1-4-4V178.29A42.65,42.65,0,0,0,62.77,180a43.68,43.68,0,0,0,31.91-12.44c.46-.44.9-.9,1.33-1.35a44,44,0,0,0,64,0c.43.45.87.91,1.33,1.35A43.66,43.66,0,0,0,192,180l1.25,0A42.65,42.65,0,0,0,204,178.29V200A4,4,0,0,1,200,204Z"/></symbol><symbol id="i-graduation-cap" viewBox="0 0 256 256"><path d="M249.8,85.49l-116-64a12,12,0,0,0-11.6,0l-116,64a12,12,0,0,0,0,21l21.8,12v47.76a19.89,19.89,0,0,0,5.09,13.32C46.63,194.7,77,220,128,220a136.88,136.88,0,0,0,40-5.75V240a12,12,0,0,0,24,0V204.12a119.53,119.53,0,0,0,30.91-24.51A19.89,19.89,0,0,0,228,166.29V118.53l21.8-12a12,12,0,0,0,0-21ZM128,45.71,219.16,96,186,114.3a1.88,1.88,0,0,1-.18-.12l-52-28.69a12,12,0,0,0-11.6,21l39,21.49L128,146.3,36.84,96ZM128,196c-40.42,0-64.65-19.07-76-31.27v-33l70.2,38.74a12,12,0,0,0,11.6,0L168,151.64v37.23A110.46,110.46,0,0,1,128,196Zm76-31.27a93.21,93.21,0,0,1-12,10.81V138.39l12-6.62Z"/></symbol><symbol id="i-buildings" viewBox="0 0 256 256"><path d="M240,204H228V96a20,20,0,0,0-20-20H172V32a20,20,0,0,0-28.45-18.12l-104,48.54A20.06,20.06,0,0,0,28,80.55V204H16a12,12,0,0,0,0,24H240a12,12,0,0,0,0-24ZM204,100V204H172V100ZM52,83.09,148,38.3V204H52ZM132,112v12a12,12,0,0,1-24,0V112a12,12,0,0,1,24,0Zm-40,0v12a12,12,0,0,1-24,0V112a12,12,0,0,1,24,0Zm0,52v12a12,12,0,0,1-24,0V164a12,12,0,0,1,24,0Zm40,0v12a12,12,0,0,1-24,0V164a12,12,0,0,1,24,0Z"/></symbol><symbol id="i-users-three" viewBox="0 0 256 256"><path d="M164.38,181.1a52,52,0,1,0-72.76,0,75.89,75.89,0,0,0-30,28.89,12,12,0,0,0,20.78,12,53,53,0,0,1,91.22,0,12,12,0,1,0,20.78-12A75.89,75.89,0,0,0,164.38,181.1ZM100,144a28,28,0,1,1,28,28A28,28,0,0,1,100,144Zm147.21,9.59a12,12,0,0,1-16.81-2.39c-8.33-11.09-19.85-19.59-29.33-21.64a12,12,0,0,1-1.82-22.91,20,20,0,1,0-24.78-28.3,12,12,0,1,1-21-11.6,44,44,0,1,1,73.28,48.35,92.18,92.18,0,0,1,22.85,21.69A12,12,0,0,1,247.21,153.59Zm-192.28-24c-9.48,2.05-21,10.55-29.33,21.65A12,12,0,0,1,6.41,136.79,92.37,92.37,0,0,1,29.26,115.1a44,44,0,1,1,73.28-48.35,12,12,0,1,1-21,11.6,20,20,0,1,0-24.78,28.3,12,12,0,0,1-1.82,22.91Z"/></symbol><symbol id="i-student" viewBox="0 0 256 256"><path d="M227.79,52.62l-96-32a11.85,11.85,0,0,0-7.58,0l-96,32A12,12,0,0,0,20,63.37,6.05,6.05,0,0,0,20,64v80a12,12,0,0,0,24,0V80.65l23.71,7.9a67.92,67.92,0,0,0,18.42,85A100.36,100.36,0,0,0,46,209.44a12,12,0,1,0,20.1,13.11C80.37,200.59,103,188,128,188s47.63,12.59,61.95,34.55a12,12,0,1,0,20.1-13.11,100.36,100.36,0,0,0-40.18-35.92,67.92,67.92,0,0,0,18.42-85l39.5-13.17a12,12,0,0,0,0-22.76Zm-99.79-8L186.05,64,128,83.35,70,64ZM172,120A44,44,0,1,1,90.94,96.29l33.27,11.09a11.89,11.89,0,0,0,7.58,0l33.27-11.09A43.85,43.85,0,0,1,172,120Z"/></symbol><symbol id="i-sparkle" viewBox="0 0 256 256"><path d="M199,125.31l-49.88-18.39L130.69,57a19.92,19.92,0,0,0-37.38,0L74.92,106.92,25,125.31a19.92,19.92,0,0,0,0,37.38l49.88,18.39L93.31,231a19.92,19.92,0,0,0,37.38,0l18.39-49.88L199,162.69a19.92,19.92,0,0,0,0-37.38Zm-63.38,35.16a12,12,0,0,0-7.11,7.11L112,212.28l-16.47-44.7a12,12,0,0,0-7.11-7.11L43.72,144l44.7-16.47a12,12,0,0,0,7.11-7.11L112,75.72l16.47,44.7a12,12,0,0,0,7.11,7.11L180.28,144ZM140,40a12,12,0,0,1,12-12h12V16a12,12,0,0,1,24,0V28h12a12,12,0,0,1,0,24H188V64a12,12,0,0,1-24,0V52H152A12,12,0,0,1,140,40ZM252,88a12,12,0,0,1-12,12h-4v4a12,12,0,0,1-24,0v-4h-4a12,12,0,0,1,0-24h4V72a12,12,0,0,1,24,0v4h4A12,12,0,0,1,252,88Z"/></symbol><symbol id="i-confetti" viewBox="0 0 256 256"><path d="M114.32,49.8A19.79,19.79,0,0,0,81.72,57L29.22,201.41A19.82,19.82,0,0,0,47.75,228a20,20,0,0,0,6.84-1.22L199,174.28a19.79,19.79,0,0,0,7.24-32.6ZM104.19,183.21l-31.4-31.4L82.94,123.9l49.16,49.16Zm-52.42,26.4Zm12-32.91L79.3,192.26l-24.45,8.89ZM157,164,92,99l10-27.58L184.57,154ZM128,40V16a12,12,0,0,1,24,0V40a12,12,0,0,1-24,0Zm116.48,83.51a12,12,0,0,1-17,17l-16-16a12,12,0,0,1,17-17Zm-.69-40.13-24,8a12,12,0,0,1-7.59-22.77l24-8a12,12,0,1,1,7.59,22.77ZM156.6,65.93C159.83,47.47,173.39,36,192,36c6.45,0,8.69-2.49,10-4.92a18,18,0,0,0,2-7.22V24a12,12,0,0,1,24,0c0,14.47-9.59,36-36,36-4.94,0-10.21,1.19-11.76,10.06A12,12,0,0,1,168.43,80a12.35,12.35,0,0,1-2.08-.18A12,12,0,0,1,156.6,65.93Z"/></symbol><symbol id="i-balloon" viewBox="0 0 256 256"><path d="M128,12a92.1,92.1,0,0,0-92,92c0,24.53,9.55,50.13,26.19,70.22,10,12,21.56,21.07,34.05,26.76L85,227.27A12,12,0,0,0,96,244h64a12,12,0,0,0,11-16.73L159.76,201c12.49-5.69,24.08-14.73,34.05-26.76C210.45,154.13,220,128.53,220,104A92.1,92.1,0,0,0,128,12Zm13.8,208H114.2l5.35-12.49a73.1,73.1,0,0,0,16.9,0Zm33.53-61.09C161.93,175.09,145.12,184,128,184s-33.93-8.91-47.33-25.09C67.73,143.29,60,122.76,60,104a68,68,0,0,1,136,0C196,122.76,188.27,143.29,175.33,158.91Zm-6.34-47q-.6.06-1.2.06a12,12,0,0,1-11.93-10.81,28,28,0,0,0-19.47-23.91,12,12,0,1,1,7.22-22.89,51.94,51.94,0,0,1,36.13,44.42A12,12,0,0,1,169,111.94Z"/></symbol><symbol id="i-train" viewBox="0 0 256 256"><path d="M184,20H72A36,36,0,0,0,36,56V184a36,36,0,0,0,36,36h0l-9.6,12.8a12,12,0,1,0,19.2,14.4L102,220h52l20.4,27.2a12,12,0,0,0,19.2-14.4L184,220h0a36,36,0,0,0,36-36V56A36,36,0,0,0,184,20ZM60,116V84h56v32Zm80-32h56v32H140ZM72,44H184a12,12,0,0,1,12,12v4H60V56A12,12,0,0,1,72,44ZM184,196H72a12,12,0,0,1-12-12V140H196v44A12,12,0,0,1,184,196Zm-80-28a16,16,0,1,1-16-16A16,16,0,0,1,104,168Zm80,0a16,16,0,1,1-16-16A16,16,0,0,1,184,168Z"/></symbol><symbol id="i-crown-simple" viewBox="0 0 256 256"><path d="M232.63,70a19.82,19.82,0,0,0-23.55,4.71l-29.52,31.82L146.22,31.76l-.06-.14a20,20,0,0,0-36.32,0l-.06.14L76.44,106.52,46.92,74.7a20,20,0,0,0-34.6,16.81c0,.16.06.31.09.47L35.07,195.76A20,20,0,0,0,54.71,212H201.29a20,20,0,0,0,19.64-16.24L243.59,92c0-.16.07-.31.09-.47A19.82,19.82,0,0,0,232.63,70ZM198.06,188H57.94L39.06,101.51,71.2,136.16A12,12,0,0,0,91,132.89l37-83.07,37,83.07a12,12,0,0,0,19.76,3.27l32.14-34.65Z"/></symbol><symbol id="i-boat" viewBox="0 0 256 256"><path d="M222.33,106.79,212,103.35V56a20,20,0,0,0-20-20H140V24a12,12,0,0,0-24,0V36H64A20,20,0,0,0,44,56v47.35l-10.33,3.44a20,20,0,0,0-13.67,19V152c0,64.63,100.8,90.57,105.09,91.64a11.94,11.94,0,0,0,5.82,0C135.2,242.57,236,216.63,236,152V125.77A20,20,0,0,0,222.33,106.79ZM68,60H188V95.35L131.79,76.62a11.85,11.85,0,0,0-7.58,0L68,95.35Zm144,92c0,36.69-58.08,60.43-84,67.59-25.94-7.17-84-30.9-84-67.59V128.65l72-24V168a12,12,0,0,0,24,0V104.65l72,24Z"/></symbol><symbol id="i-lightning" viewBox="0 0 256 256"><path d="M219.71,117.38a12,12,0,0,0-7.25-8.52L161.28,88.39l10.59-70.61a12,12,0,0,0-20.64-10l-112,120a12,12,0,0,0,4.31,19.33l51.18,20.47L84.13,238.22a12,12,0,0,0,20.64,10l112-120A12,12,0,0,0,219.71,117.38ZM113.6,203.55l6.27-41.77a12,12,0,0,0-7.41-12.92L68.74,131.37,142.4,52.45l-6.27,41.77a12,12,0,0,0,7.41,12.92l43.72,17.49Z"/></symbol><symbol id="i-cow" viewBox="0 0 256 256"><path d="M120,128a16,16,0,1,1-16-16A16,16,0,0,1,120,128Zm32-16a16,16,0,1,0,16,16A16,16,0,0,0,152,112Zm95.48,12.66A20,20,0,0,1,232,132H204v35.05A38,38,0,0,1,182,236H74a38,38,0,0,1-22-68.95V132H24A20,20,0,0,1,4.39,108.17a60.15,60.15,0,0,1,52-47.76A59.7,59.7,0,0,1,44,24a12,12,0,0,1,24,0,36,36,0,0,0,36,36h48a36,36,0,0,0,36-36,12,12,0,0,1,24,0,59.7,59.7,0,0,1-12.35,36.41,60.15,60.15,0,0,1,52,47.76A19.78,19.78,0,0,1,247.48,124.66ZM76,160H180V104a20,20,0,0,0-20-20H96a20,20,0,0,0-20,20ZM56.5,84.64A36.15,36.15,0,0,0,29.26,108H52v-4A43.71,43.71,0,0,1,56.5,84.64ZM196,198a14,14,0,0,0-14-14H74a14,14,0,0,0,0,28H182A14,14,0,0,0,196,198Zm30.74-90A36.15,36.15,0,0,0,199.5,84.64,43.71,43.71,0,0,1,204,104v4Z"/></symbol><symbol id="i-scooter" viewBox="0 0 256 256"><path d="M212,132l-.68,0L179.38,36.21A12,12,0,0,0,168,28H136a12,12,0,0,0,0,24h23.35l14.83,44.49L114.59,164H83.2a40,40,0,1,0-2.55,24H120a12,12,0,0,0,9-4.06l54-61.13,5.6,16.81A40,40,0,1,0,212,132ZM44,188a16,16,0,1,1,16-16A16,16,0,0,1,44,188Zm168,0a16,16,0,1,1,16-16A16,16,0,0,1,212,188Z"/></symbol><symbol id="i-paper-plane-tilt" viewBox="0 0 256 256"><path d="M230.14,25.86a20,20,0,0,0-19.57-5.11l-.22.07L18.44,79a20,20,0,0,0-3.06,37.25L99,157l40.71,83.65a19.81,19.81,0,0,0,18,11.38c.57,0,1.15,0,1.73-.07A19.82,19.82,0,0,0,177,237.56L235.18,45.65a1.42,1.42,0,0,0,.07-.22A20,20,0,0,0,230.14,25.86ZM156.91,221.07l-34.37-70.64,46-45.95a12,12,0,0,0-17-17l-46,46L34.93,99.09,210,46Z"/></symbol><symbol id="i-star" viewBox="0 0 256 256"><path d="M243,96a20.33,20.33,0,0,0-17.74-14l-56.59-4.57L146.83,24.62a20.36,20.36,0,0,0-37.66,0L87.35,77.44,30.76,82A20.45,20.45,0,0,0,19.1,117.88l43.18,37.24-13.2,55.7A20.37,20.37,0,0,0,79.57,233L128,203.19,176.43,233a20.39,20.39,0,0,0,30.49-22.15l-13.2-55.7,43.18-37.24A20.43,20.43,0,0,0,243,96ZM172.53,141.7a12,12,0,0,0-3.84,11.86L181.58,208l-47.29-29.08a12,12,0,0,0-12.58,0L74.42,208l12.89-54.4a12,12,0,0,0-3.84-11.86L41.2,105.24l55.4-4.47a12,12,0,0,0,10.13-7.38L128,41.89l21.27,51.5a12,12,0,0,0,10.13,7.38l55.4,4.47Z"/></symbol><symbol id="i-chat-circle-dots" viewBox="0 0 256 256"><path d="M120,128a16,16,0,1,1-16-16A16,16,0,0,1,120,128Zm32-16a16,16,0,1,0,16,16A16,16,0,0,0,152,112Zm84,16A108,108,0,0,1,78.77,224.15L46.34,235A20,20,0,0,1,21,209.66l10.81-32.43A108,108,0,1,1,236,128Zm-24,0A84,84,0,1,0,55.27,170.06a12,12,0,0,1,1,9.81l-9.93,29.79,29.79-9.93a12.1,12.1,0,0,1,3.8-.62,12,12,0,0,1,6,1.62A84,84,0,0,0,212,128Z"/></symbol><symbol id="i-whatsapp-logo" viewBox="0 0 256 256"><path d="M152.58,145.23l23,11.48A24,24,0,0,1,152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155ZM232,128A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-40,24a8,8,0,0,0-4.42-7.16l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88A40,40,0,0,0,192,152Z"/></symbol><symbol id="i-facebook-logo" viewBox="0 0 256 256"><path d="M232,128a104.16,104.16,0,0,1-91.55,103.26,4,4,0,0,1-4.45-4V152h24a8,8,0,0,0,8-8.53,8.17,8.17,0,0,0-8.25-7.47H136V112a16,16,0,0,1,16-16h16a8,8,0,0,0,8-8.53A8.17,8.17,0,0,0,167.73,80H152a32,32,0,0,0-32,32v24H96a8,8,0,0,0-8,8.53A8.17,8.17,0,0,0,96.27,152H120v75.28a4,4,0,0,1-4.44,4A104.15,104.15,0,0,1,24.07,124.09c2-54,45.74-97.9,99.78-100A104.12,104.12,0,0,1,232,128Z"/></symbol></svg>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
