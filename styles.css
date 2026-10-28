@@ -279,8 +279,30 @@ html:not(.js) .wi{transform:none}
 .hero__title{font-size:clamp(2.7rem,10.4vw,4.2rem);line-height:1;letter-spacing:-.04em;font-weight:700}
 .hero__lead{max-width:46ch;font-size:clamp(1.05rem,1.4vw,1.22rem);color:var(--muted)}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
-.hero__slogan{display:flex;align-items:center;gap:14px;font-family:var(--f-display);font-weight:700;font-size:clamp(1.3rem,2.3vw,1.75rem);letter-spacing:-.03em;line-height:1.1}
-.hero__slogan::before{content:"";flex:none;width:6px;height:1.5em;border-radius:3px;background:linear-gradient(var(--red),var(--yellow),var(--cyan))}
+/* Slogan: boleto de tren con las letras de la marca (hero y footer) */
+.slogan__name i{display:inline-block;font-style:normal}
+.slogan__name i:nth-child(1){color:var(--red)}
+.slogan__name i:nth-child(2){color:var(--green)}
+.slogan__name i:nth-child(3){color:var(--blue)}
+.slogan__name i:nth-child(4){color:var(--yellow)}
+.slogan__name i:nth-child(5){color:var(--cyan)}
+.slogan__name i:nth-child(6){color:var(--tan)}
+.slogan__tag{color:#fff}
+.hero__slogan{
+  position:relative;display:inline-flex;align-items:baseline;gap:.3em;max-width:100%;
+  padding:.46em 1.05em .52em;border-radius:var(--r-pill);background:var(--ink);
+  font-family:var(--f-display);font-weight:800;font-size:clamp(1.4rem,5.6vw,2.5rem);letter-spacing:-.045em;line-height:1;white-space:nowrap;
+  box-shadow:0 26px 44px -24px rgba(13,14,18,.75),7px 7px 0 var(--yellow);
+  rotate:-2deg;transform-origin:left center;
+}
+.hero__slogan::before,.hero__slogan::after{content:"";position:absolute;top:50%;width:.5em;height:.5em;margin-top:-.25em;border-radius:50%;background:var(--paper)}
+.hero__slogan::before{left:-.25em}
+.hero__slogan::after{right:-.25em}
+.hero__slogan .slogan__tag{color:var(--yellow)}
+.js:not(.is-ready) .hero__slogan .slogan__name i{translate:0 .6em;scale:.5;opacity:0}
+.js .hero__slogan .slogan__name i{transition:translate .8s var(--ease) calc(1s + var(--i)*70ms),scale .8s var(--ease) calc(1s + var(--i)*70ms),opacity .5s calc(1s + var(--i)*70ms)}
+.hero__slogan:hover .slogan__name i{animation:sloganHop .7s var(--ease) calc(var(--i)*60ms) both}
+@keyframes sloganHop{40%{translate:0 -.22em;scale:1.12}}
 
 /* Escenario de fotos */
 .stage{position:relative;width:min(100%,560px);aspect-ratio:1/1.08;margin-inline:auto}
@@ -608,6 +630,8 @@ a.bento__cell:hover::after,a.bento__cell:focus-visible::after{box-shadow:inset 0
 .b-a{grid-column:1/-1;grid-row:span 2}
 .b-c{grid-row:span 2}
 .b-e{grid-column:1/-1;grid-row:span 2}
+.b-j{grid-column:1/-1;grid-row:span 2}
+.b-j img{object-position:50% 58%}
 @media (min-width:900px){
   .bento{grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(150px,15.5vw,215px);gap:14px}
   .b-a{grid-column:1/6;grid-row:1/3}
@@ -619,6 +643,7 @@ a.bento__cell:hover::after,a.bento__cell:focus-visible::after{box-shadow:inset 0
   .b-g{grid-column:9/13;grid-row:3}
   .b-h{grid-column:5/9;grid-row:4}
   .b-i{grid-column:9/13;grid-row:4}
+  .b-j{grid-column:1/13;grid-row:5/7}
 }
 .more{margin-top:clamp(40px,6vw,72px)}
 .more h3{margin-bottom:16px}
@@ -825,7 +850,8 @@ a.bento__cell:hover::after,a.bento__cell:focus-visible::after{box-shadow:inset 0
 .footer__brand{grid-column:1/-1;display:grid;gap:18px;justify-items:start}
 .footer__brand img{width:min(220px,60vw);height:auto;border-radius:20px}
 .footer__brand p{color:var(--muted-d);max-width:34ch}
-.footer__brand .footer__slogan{max-width:none;color:#fff;font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,2.6vw,2rem);letter-spacing:-.03em;line-height:1.05}
+.footer__brand .footer__slogan{max-width:none;color:#fff;font-family:var(--f-display);font-weight:800;font-size:clamp(2rem,6.4vw,2.9rem);letter-spacing:-.045em;line-height:1}
+.footer__slogan .slogan__tag{display:block;margin-top:.12em;color:#fff}
 .footer__col{display:grid;gap:10px;align-content:start}
 .footer__col h3{font-family:var(--f-mono);font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-d);margin-bottom:6px}
 .footer__col a{color:#fff;opacity:.86;transition:opacity .3s,translate .4s var(--ease);width:max-content}
