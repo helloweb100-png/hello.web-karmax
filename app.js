@@ -210,7 +210,7 @@
     const rail = $('#rail');
     const railLinks = rail ? $$('a', rail) : [];
     const navLinks = $$('.nav__links a');
-    const ids = ['inicio', 'atracciones', 'toros', 'inflables', 'espuma', 'contacto'];
+    const ids = ['inicio', 'atracciones', 'galeria', 'toros', 'inflables', 'espuma', 'contacto'];
     const sections = ids.map((id) => document.getElementById(id));
     let maxScroll = 1;
     const measure = () => { maxScroll = Math.max(1, doc.scrollHeight - innerHeight); };
@@ -873,22 +873,46 @@
   /* =====================================================================
      LIGHTBOX
      ===================================================================== */
+  let lightbox = null; // { open(lista, indice) }: lo usan los inflables y la galería con filtros
   function initLightbox() {
-    const items = $$('[data-lightbox]');
     const lb = $('#lightbox');
-    if (!items.length || !lb) return;
-    const img = $('#lbImg'), cap = $('#lbCap'), closeBtn = $('#lbClose');
-    let idx = 0, lastFocus = null;
+    if (!lb) return;
+    const img = $('#lbImg'), vid = $('#lbVideo'), cap = $('#lbCap'), num = $('#lbNum'), closeBtn = $('#lbClose');
+    let items = [], idx = 0, lastFocus = null;
 
+    const stopVideo = () => {
+      if (!vid.getAttribute('src')) return;
+      vid.pause();
+      vid.removeAttribute('src');
+      vid.load();
+    };
     const show = (i) => {
       idx = (i + items.length) % items.length;
       const a = items[idx];
-      img.src = a.href;
-      img.alt = ($('img', a) || {}).alt || '';
+      const alt = ($('img', a) || {}).alt || '';
+      if (a.dataset.video) {
+        img.hidden = true;
+        vid.hidden = false;
+        vid.poster = a.href;
+        vid.src = a.dataset.video;
+        vid.setAttribute('aria-label', alt);
+        const p = vid.play();
+        if (p && p.catch) p.catch(() => {});
+      } else {
+        stopVideo();
+        vid.hidden = true;
+        img.hidden = false;
+        img.src = a.href;
+        img.alt = alt;
+      }
       cap.textContent = a.dataset.caption || '';
-      const n = new Image(); n.src = items[(idx + 1) % items.length].href;
+      num.textContent = items.length > 1 ? `${idx + 1} / ${items.length}` : '';
+      const next = items[(idx + 1) % items.length];
+      if (next && !next.dataset.video) { const n = new Image(); n.src = next.href; }
     };
-    const open = (i) => {
+    const open = (list, i) => {
+      if (!list.length) return;
+      items = list;
       lastFocus = document.activeElement;
       show(i);
       lb.hidden = false;
@@ -897,10 +921,14 @@
     };
     const close = () => {
       lb.hidden = true;
+      stopVideo();
       if (lenis) lenis.start();
       if (lastFocus) lastFocus.focus();
     };
-    items.forEach((a, i) => a.addEventListener('click', (e) => { e.preventDefault(); open(i); }));
+    lightbox = { open };
+
+    const group = $$('[data-lightbox]');
+    group.forEach((a, i) => a.addEventListener('click', (e) => { e.preventDefault(); open(group, i); }));
     closeBtn.addEventListener('click', close);
     $('#lbPrev').addEventListener('click', () => show(idx - 1));
     $('#lbNext').addEventListener('click', () => show(idx + 1));
@@ -908,8 +936,10 @@
     document.addEventListener('keydown', (e) => {
       if (lb.hidden) return;
       if (e.key === 'Escape') close();
-      if (e.key === 'ArrowLeft') show(idx - 1);
-      if (e.key === 'ArrowRight') show(idx + 1);
+      if (document.activeElement !== vid) {
+        if (e.key === 'ArrowLeft') show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      }
       if (e.key === 'Tab') {
         const f = $$('button', lb), first = f[0], lastEl = f[f.length - 1];
         if (e.shiftKey && document.activeElement === first) { e.preventDefault(); lastEl.focus(); }
@@ -919,9 +949,167 @@
     let sx = 0;
     lb.addEventListener('pointerdown', (e) => { sx = e.clientX; });
     lb.addEventListener('pointerup', (e) => {
+      if (e.target === vid) return;
       const dx = e.clientX - sx;
       if (Math.abs(dx) > 60) show(idx + (dx < 0 ? 1 : -1));
     });
+  }
+
+  /* =====================================================================
+     GALERÍA: filtros por atracción. Las tarjetas del tren ("Ver toros
+     mecánicos", "Ver inflables"...) también aplican el filtro.
+     ===================================================================== */
+  function initGallery() {
+    const sec = $('#galeria');
+    if (!sec) return;
+    const filters = $('#galFilters'), grid = $('#galGrid'), info = $('#galInfo');
+    const chips = $$('.gal__chip', filters);
+    const items = $$('.gal__item', grid);
+    const title = $('#galTitle'), text = $('#galText'), count = $('#galCount');
+    const cta = $('#galCta'), ctaLabel = $('span', cta), status = $('#galStatus');
+    const motion = hasGSAP && !reduceMotion;
+    const sticky = matchMedia('(min-width:900px)');
+    let cur = 'todos', token = 0;
+
+    const inFilter = (it, f) => f === 'todos' || it.dataset.cat === f;
+    const refresh = () => { if (hasGSAP) ScrollTrigger.refresh(); };
+    const label = (list) => {
+      const vids = list.filter((it) => it.dataset.video).length, pics = list.length - vids;
+      const parts = [];
+      if (pics) parts.push(`${pics} ${pics === 1 ? 'foto' : 'fotos'}`);
+      if (vids) parts.push(`${vids} ${vids === 1 ? 'video' : 'videos'}`);
+      return parts.join(' y ');
+    };
+
+    chips.forEach((c) => {
+      const n = $('.gal__n', c);
+      if (n) n.textContent = items.filter((it) => inFilter(it, c.dataset.filter)).length;
+    });
+
+    // Textos, chips activos y botón de WhatsApp de la categoría elegida
+    const paint = (f) => {
+      const chip = chips.find((c) => c.dataset.filter === f);
+      const list = items.filter((it) => inFilter(it, f));
+      chips.forEach((c) => { const on = c === chip; c.classList.toggle('is-active', on); c.setAttribute('aria-pressed', String(on)); });
+      title.textContent = chip.dataset.title;
+      text.textContent = chip.dataset.text;
+      count.textContent = label(list);
+      ctaLabel.textContent = chip.dataset.cta;
+      cta.dataset.wa = chip.dataset.wa;
+      cta.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(chip.dataset.wa)}`;
+      status.textContent = `Mostrando ${chip.dataset.title}: ${label(list)}.`;
+      info.classList.remove('is-swap');
+      void info.offsetWidth;
+      info.classList.add('is-swap');
+      if (filters.scrollWidth > filters.clientWidth) {
+        const fr = filters.getBoundingClientRect(), cr = chip.getBoundingClientRect();
+        filters.scrollTo({ left: filters.scrollLeft + cr.left - fr.left - (fr.width - cr.width) / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+      }
+    };
+
+    // Muestra solo las fotos de la categoría (con pocas fotos se ven más grandes)
+    const swap = (f) => {
+      const shown = [];
+      items.forEach((it) => { const on = inFilter(it, f); it.hidden = !on; if (on) shown.push(it); });
+      grid.classList.toggle('is-few', shown.length <= 3);
+      return shown;
+    };
+
+    const playIn = (list) => {
+      list.forEach((el) => el.classList.add('is-in'));
+      if (!motion || !list.length) return;
+      gsap.fromTo(list, { opacity: 0, y: 26, scale: 0.94 }, {
+        opacity: 1, y: 0, scale: 1, duration: 0.7, ease: 'power3.out',
+        stagger: Math.min(0.05, 0.9 / list.length), clearProps: 'opacity,transform', overwrite: true,
+      });
+    };
+
+    // Si el usuario estaba más abajo de la barra de filtros, lo regresa al inicio de la galería
+    const keepInView = () => {
+      if (!sticky.matches) return;
+      const gap = info.getBoundingClientRect().top - filters.getBoundingClientRect().bottom;
+      if (gap >= 0) return;
+      const y = window.scrollY + info.getBoundingClientRect().top - filters.getBoundingClientRect().bottom - 12;
+      if (lenis) lenis.scrollTo(y, { duration: 0.8 });
+      else window.scrollTo({ top: y, behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+
+    // Devuelve una función que reproduce la entrada de las fotos (útil si se difiere hasta terminar un scroll)
+    const setFilter = (f, { instant = false, deferIn = false } = {}) => {
+      if (f === cur || !chips.some((c) => c.dataset.filter === f)) return () => {};
+      const my = ++token;
+      cur = f;
+      paint(f);
+      if (!motion) { playIn(swap(f)); refresh(); return () => {}; }
+
+      gsap.killTweensOf(items);
+      gsap.killTweensOf(grid);
+      const leaving = items.filter((it) => !it.hidden);
+      const h0 = grid.offsetHeight;
+      let shown = [];
+      const run = () => {
+        if (my !== token) return;
+        shown = swap(f);
+        gsap.set(shown, { opacity: 0 });
+        shown.forEach((el) => el.classList.add('is-in'));
+        grid.style.height = '';
+        const h1 = grid.offsetHeight;
+        if (!instant && Math.abs(h1 - h0) > 4) {
+          gsap.fromTo(grid, { height: h0 }, { height: h1, duration: 0.6, ease: 'power3.inOut', clearProps: 'height', onComplete: refresh });
+        } else if (!deferIn) {
+          refresh();
+        }
+        if (!deferIn) playIn(shown);
+        if (!instant) keepInView();
+      };
+      if (!instant && leaving.length) {
+        gsap.to(leaving, { opacity: 0, scale: 0.94, duration: 0.22, ease: 'power2.in', stagger: { amount: 0.12 }, onComplete: run });
+      } else {
+        run();
+      }
+      return () => { if (my === token) { playIn(shown); refresh(); } };
+    };
+
+    chips.forEach((c) => c.addEventListener('click', () => setFilter(c.dataset.filter)));
+
+    // Fotos => visor con las fotos que se ven en ese momento
+    items.forEach((a) => a.addEventListener('click', (e) => {
+      if (!lightbox) return;
+      e.preventDefault();
+      const list = items.filter((it) => !it.hidden);
+      lightbox.open(list, list.indexOf(a));
+    }));
+
+    // Tarjetas del tren => baja a la galería con el filtro aplicado
+    const goTo = (f) => {
+      const play = setFilter(f, { instant: true, deferIn: true });
+      let done = false;
+      const fire = () => { if (done) return; done = true; play(); };
+      const offset = sticky.matches ? -92 : -20;
+      if (lenis) lenis.scrollTo(filters, { offset, duration: 1.5, easing: (t) => 1 - Math.pow(1 - t, 4), onComplete: fire });
+      else window.scrollTo({ top: window.scrollY + filters.getBoundingClientRect().top + offset, behavior: reduceMotion ? 'auto' : 'smooth' });
+      setTimeout(fire, lenis ? 1900 : 900);
+      history.replaceState(null, '', '#galeria');
+    };
+    $$('.vagon').forEach((card) => {
+      const link = $('[data-gal]', card);
+      if (!link) return;
+      link.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); closeMenu(); goTo(link.dataset.gal); });
+      card.addEventListener('click', (e) => { if (!e.target.closest('a')) goTo(link.dataset.gal); });
+    });
+
+    // La barra de filtros sube con el menú cuando este se oculta al bajar
+    const nav = $('#nav');
+    onScroll(() => filters.classList.toggle('is-top', nav.classList.contains('is-hidden')));
+
+    // Primera entrada: cada foto aparece al llegar a la pantalla
+    if (!motion || !('IntersectionObserver' in window)) { items.forEach((el) => el.classList.add('is-in')); return; }
+    const io = new IntersectionObserver((entries) => {
+      const seen = entries.filter((en) => en.isIntersecting && !en.target.classList.contains('is-in')).map((en) => en.target);
+      entries.forEach((en) => { if (en.isIntersecting) io.unobserve(en.target); });
+      if (seen.length) playIn(seen);
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.1 });
+    items.forEach((el) => io.observe(el));
   }
 
   /* =====================================================================
@@ -1031,6 +1219,7 @@
   safe('video', initVideo);
   safe('fields', initFields);
   safe('lightbox', initLightbox);
+  safe('gallery', initGallery);
   safe('form', initForm);
   safe('wafloat', initWaFloat);
   safe('hero3d', initHero3D);
